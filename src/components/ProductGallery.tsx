@@ -4,6 +4,13 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, Trash2, Recycle, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
+// Import real product images
+import coletaSeletivaImg from "@/assets/coleta-seletiva-conjunto.png";
+import lixeiraPedalImg from "@/assets/lixeira-pedal-banheiro.png";
+import placaSinalizacaoImg from "@/assets/placa-sinalizacao-hotel.png";
+import portaGuardaChuvaImg from "@/assets/porta-guarda-chuva-hotel.png";
+import bituqueiraImg from "@/assets/bituqueira-hotel-externa.png";
+
 const categories = [
   "Todos",
   "Coleta Seletiva",
@@ -12,55 +19,55 @@ const categories = [
   "Utilitários",
 ];
 
-// Placeholder products - User will add real images
+// Real products with real images
 const products = [
   {
     id: 1,
-    name: "Lixeira Coleta Seletiva Premium",
+    name: "Conjunto Coleta Seletiva Premium",
     category: "Coleta Seletiva",
-    description: "Conjunto completo em aço inox para reciclagem. Perfeito para áreas comuns de hotéis e condomínios.",
-    image: null,
-    features: ["AISI 304", "Capacidade 60L", "Resistente UV"],
+    description: "Conjunto completo em aço inox AISI 304 com identificação colorida. Perfeito para áreas comuns de hotéis, condomínios e resorts.",
+    image: coletaSeletivaImg,
+    features: ["AISI 304", "Capacidade 60L cada", "Aros coloridos", "Identificação clara"],
   },
   {
     id: 2,
-    name: "Lixeira Inox com Pedal 30L",
+    name: "Lixeira Inox com Pedal - Banheiro",
     category: "Lixeiras com Pedal",
-    description: "Design sofisticado com acionamento por pedal. Ideal para quartos e suítes premium.",
-    image: null,
-    features: ["Pedal silencioso", "Tampa hermética", "Acabamento polido"],
+    description: "Design sofisticado e compacto com acionamento por pedal silencioso. Ideal para banheiros de quartos e suítes premium.",
+    image: lixeiraPedalImg,
+    features: ["Pedal silencioso", "Tampa hermética", "Acabamento polido", "Compacta"],
   },
   {
     id: 3,
-    name: "Lixeira Basculante Grande",
-    category: "Lixeiras Inox",
-    description: "Alta capacidade para áreas de grande fluxo. Perfeita para lobbies e recepções.",
-    image: null,
-    features: ["100L", "Base antiderrapante", "Fácil limpeza"],
+    name: "Porta Guarda-Chuvas Inox Hotel",
+    category: "Utilitários",
+    description: "Elegância e funcionalidade para lobby e recepções. Design minimalista que valoriza a entrada do seu empreendimento.",
+    image: portaGuardaChuvaImg,
+    features: ["2 tamanhos", "Base antiderrapante", "Fácil limpeza", "Design premium"],
   },
   {
     id: 4,
-    name: "Conjunto Bituqueiras Premium",
+    name: "Bituqueira Premium Área Externa",
     category: "Utilitários",
-    description: "Solução elegante para áreas externas. Design que valoriza a estética do seu empreendimento.",
-    image: null,
-    features: ["Resistente chuva", "Fácil manutenção", "Design exclusivo"],
+    description: "Solução elegante e resistente para áreas externas de hotéis e resorts. Design que valoriza a estética do empreendimento.",
+    image: bituqueiraImg,
+    features: ["Resistente UV", "Fácil manutenção", "Design exclusivo", "Alta durabilidade"],
   },
   {
     id: 5,
-    name: "Lixeira Aro Inox 50L",
-    category: "Lixeiras Inox",
-    description: "Versatilidade e durabilidade para qualquer ambiente. Escolha dos arquitetos.",
-    image: null,
-    features: ["Aro removível", "Diversos tamanhos", "Personalização"],
+    name: "Placa Sinalização Hotel",
+    category: "Utilitários",
+    description: "Sinalização profissional em inox para lobby e áreas comuns. Durabilidade e elegância em cada detalhe.",
+    image: placaSinalizacaoImg,
+    features: ["Dobrável", "Personalização", "Design corporativo", "Resistente"],
   },
   {
     id: 6,
-    name: "Sistema Coleta Seletiva Compacto",
-    category: "Coleta Seletiva",
-    description: "Solução inteligente para espaços reduzidos. Máxima eficiência em área mínima.",
+    name: "Lixeira Aro Inox 50L",
+    category: "Lixeiras Inox",
+    description: "Versatilidade e durabilidade para qualquer ambiente. Escolha dos arquitetos para projetos corporativos.",
     image: null,
-    features: ["Design compacto", "4 compartimentos", "Identificação cores"],
+    features: ["Aro removível", "Diversos tamanhos", "Personalização", "AISI 304"],
   },
 ];
 
@@ -79,15 +86,28 @@ export const ProductGallery = () => {
       style={{ animationDelay: `${index * 0.1}s` }}
       onClick={() => setSelectedProduct(product)}
     >
-      {/* Image Placeholder */}
+      {/* Image */}
       <div className="aspect-square bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        <div className="text-center z-10">
-          <Trash2 className="w-20 h-20 text-primary/40 mx-auto mb-4" />
-          <p className="text-sm text-muted-foreground font-medium px-4">
-            Imagem do produto será<br />adicionada aqui
-          </p>
-        </div>
+        {product.image ? (
+          <>
+            <img 
+              src={product.image} 
+              alt={product.name}
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </>
+        ) : (
+          <>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="text-center z-10">
+              <Trash2 className="w-20 h-20 text-primary/40 mx-auto mb-4" />
+              <p className="text-sm text-muted-foreground font-medium px-4">
+                Mais produtos disponíveis<br />sob consulta
+              </p>
+            </div>
+          </>
+        )}
         <div className="absolute top-4 right-4 bg-accent text-foreground px-3 py-1 rounded-full text-xs font-bold">
           Premium
         </div>
@@ -197,11 +217,19 @@ export const ProductGallery = () => {
           {selectedProduct && (
             <div className="grid md:grid-cols-2 gap-8 p-6">
               {/* Image */}
-              <div className="aspect-square bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl flex items-center justify-center">
-                <div className="text-center">
-                  <Trash2 className="w-32 h-32 text-primary/40 mx-auto mb-4" />
-                  <p className="text-muted-foreground">Imagem do produto</p>
-                </div>
+              <div className="aspect-square bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl flex items-center justify-center overflow-hidden">
+                {selectedProduct.image ? (
+                  <img 
+                    src={selectedProduct.image} 
+                    alt={selectedProduct.name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="text-center">
+                    <Trash2 className="w-32 h-32 text-primary/40 mx-auto mb-4" />
+                    <p className="text-muted-foreground">Consulte disponibilidade</p>
+                  </div>
+                )}
               </div>
 
               {/* Details */}

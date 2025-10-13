@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Award, Shield, Leaf } from "lucide-react";
+import coletaSeletivaImg from "@/assets/coleta-seletiva-conjunto.png";
 
 export const Hero = () => {
   const whatsappLink = "https://wa.me/5511978791851?text=Olá!%20Vim%20através%20do%20site%20e%20gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20hotel/condomínio/resort.";
@@ -92,16 +93,14 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Hero Image Placeholder - User will upload real images */}
+          {/* Hero Image - Real Product Photo */}
           <div className="relative lg:block animate-scale-in" style={{ animationDelay: "0.2s" }}>
             <div className="relative rounded-3xl overflow-hidden shadow-strong">
-              <div className="aspect-[4/5] bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm border border-white/30 flex items-center justify-center">
-                <div className="text-center text-white p-8">
-                  <Award className="w-20 h-20 mx-auto mb-4 opacity-50" />
-                  <p className="text-lg font-semibold">Imagem do Produto</p>
-                  <p className="text-sm opacity-75 mt-2">Upload da imagem real será feito aqui</p>
-                </div>
-              </div>
+              <img 
+                src={coletaSeletivaImg} 
+                alt="Conjunto de Lixeiras para Coleta Seletiva Premium em Aço Inox - Winnet Metais" 
+                className="w-full h-full object-cover aspect-[4/5]"
+              />
             </div>
             {/* Floating Badge */}
             <div className="absolute -bottom-6 -right-6 bg-white text-primary p-6 rounded-2xl shadow-strong animate-pulse-glow">
