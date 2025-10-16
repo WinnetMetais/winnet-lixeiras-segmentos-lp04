@@ -69,7 +69,7 @@ export const Hero = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold text-lg px-8 py-6 rounded-xl backdrop-blur-sm"
+                className="border-2 border-white bg-white/20 text-white hover:bg-white hover:text-primary font-semibold text-lg px-8 py-6 rounded-xl backdrop-blur-sm"
                 onClick={() => document.getElementById('produtos')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Ver Produtos Premium
