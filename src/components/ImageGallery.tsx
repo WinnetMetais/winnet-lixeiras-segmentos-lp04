@@ -16,7 +16,7 @@ const galleryImages = [
     id: 1,
     src: coletaSeletivaImg,
     title: "Conjunto Coleta Seletiva Premium",
-    category: "Coleta Seletiva",
+    category: "Áreas Comuns",
     description: "Sistema completo de coleta seletiva em aço inox AISI 430 e 304 com aros coloridos para fácil identificação",
     location: "Ambiente Corporativo",
   },
@@ -24,7 +24,7 @@ const galleryImages = [
     id: 2,
     src: lixeiraPedalImg,
     title: "Lixeira com Pedal - Banheiro",
-    category: "Lixeiras com Pedal",
+    category: "Banheiros",
     description: "Design compacto e sofisticado ideal para banheiros de hotéis e suítes premium",
     location: "Banheiro Hotel 5 Estrelas",
   },
@@ -32,7 +32,7 @@ const galleryImages = [
     id: 3,
     src: portaGuardaChuvaImg,
     title: "Porta Guarda-Chuvas Duplo",
-    category: "Utilitários",
+    category: "Recepção e Lobby",
     description: "Elegância para recepções e lobbies com dois tamanhos diferentes para versatilidade",
     location: "Lobby Hotel Premium",
   },
@@ -40,7 +40,7 @@ const galleryImages = [
     id: 4,
     src: bituqueiraImg,
     title: "Bituqueira Premium Área Externa",
-    category: "Utilitários",
+    category: "Áreas Externas",
     description: "Solução resistente e elegante para áreas externas de hotéis e resorts",
     location: "Área Externa Resort",
   },
@@ -48,13 +48,13 @@ const galleryImages = [
     id: 5,
     src: placaSinalizacaoImg,
     title: "Placa de Sinalização Profissional",
-    category: "Utilitários",
+    category: "Corredores e Circulação",
     description: "Sinalização premium em inox para áreas de alto fluxo em hotéis e condomínios",
     location: "Corredor Hotel",
   },
 ];
 
-const categories = ["Todos", "Coleta Seletiva", "Lixeiras com Pedal", "Utilitários"];
+const categories = ["Todos", "Banheiros", "Recepção e Lobby", "Áreas Comuns", "Áreas Externas", "Corredores e Circulação"];
 
 export const ImageGallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
