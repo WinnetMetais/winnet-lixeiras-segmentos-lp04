@@ -10,6 +10,14 @@ import lixeiraPedalImg from "@/assets/lixeira-pedal-banheiro.png";
 import placaSinalizacaoImg from "@/assets/placa-sinalizacao-hotel.png";
 import portaGuardaChuvaImg from "@/assets/porta-guarda-chuva-hotel.png";
 import bituqueiraImg from "@/assets/bituqueira-hotel-externa.png";
+import lixeiraRedondaLobbyImg from "@/assets/lixeira-redonda-lobby.png";
+import lixeiraQuadradaRestauranteImg from "@/assets/lixeira-quadrada-restaurante.png";
+import lixeiraBasculanteLobbyImg from "@/assets/lixeira-basculante-lobby.png";
+import bituqueiraParedeImg from "@/assets/bituqueira-parede-externa.png";
+import bituqueiraTorreImg from "@/assets/bituqueira-torre-entrada.png";
+import lixeiraPedalCozinhaImg from "@/assets/lixeira-pedal-cozinha.png";
+import lixeiraPedalSpaImg from "@/assets/lixeira-pedal-spa.png";
+import ensacadorGuardaChuvasImg from "@/assets/ensacador-guarda-chuvas.png";
 
 const categories = [
   "Todos",
@@ -63,6 +71,70 @@ const products = [
   },
   {
     id: 6,
+    name: "Lixeira Redonda Basculante",
+    category: "Lixeiras Inox",
+    description: "Lixeira elegante com abertura basculante para lobbies e recepções. Design atemporal que se adapta a qualquer decoração.",
+    image: lixeiraRedondaLobbyImg,
+    features: ["Tampa basculante", "Acabamento premium", "Fácil higienização", "Design elegante"],
+  },
+  {
+    id: 7,
+    name: "Lixeira Quadrada Basculante Premium",
+    category: "Lixeiras Inox",
+    description: "Design moderno e compacto, perfeita para restaurantes, bares e áreas gourmet de alto padrão.",
+    image: lixeiraQuadradaRestauranteImg,
+    features: ["Design moderno", "30-50 litros", "Tampa basculante", "Acabamento escovado"],
+  },
+  {
+    id: 8,
+    name: "Lixeira Basculante Clássica Hotel",
+    category: "Lixeiras Inox",
+    description: "Modelo premium com acabamento espelhado, ideal para lobbies de hotéis cinco estrelas e áreas VIP.",
+    image: lixeiraBasculanteLobbyImg,
+    features: ["Acabamento espelhado", "Tampa suave", "Grande capacidade", "Design sofisticado"],
+  },
+  {
+    id: 9,
+    name: "Bituqueira de Parede Space",
+    category: "Utilitários",
+    description: "Solução prática e elegante para fixação em parede. Ideal para áreas externas com espaço limitado.",
+    image: bituqueiraParedeImg,
+    features: ["Fixação em parede", "Design discreto", "Resistente às intempéries", "Fácil instalação"],
+  },
+  {
+    id: 10,
+    name: "Bituqueira Torre com Base",
+    category: "Utilitários",
+    description: "Torre elegante com base fixa para entrada principal. Resistência e sofisticação para áreas de alto fluxo.",
+    image: bituqueiraTorreImg,
+    features: ["Base fixa", "Design vertical", "Alta capacidade", "Acabamento premium"],
+  },
+  {
+    id: 11,
+    name: "Lixeira Pedal Grande com Alça",
+    category: "Lixeiras com Pedal",
+    description: "Grande capacidade com pedal e alça lateral. Perfeita para cozinhas profissionais, copas e áreas de serviço.",
+    image: lixeiraPedalCozinhaImg,
+    features: ["Grande capacidade", "Alça lateral", "Pedal robusto", "Design profissional"],
+  },
+  {
+    id: 12,
+    name: "Lixeira Pedal Spa & Wellness",
+    category: "Lixeiras com Pedal",
+    description: "Design elegante e higiênico para spas, saunas e wellness centers. Acabamento premium para ambientes sofisticados.",
+    image: lixeiraPedalSpaImg,
+    features: ["Pedal higiênico", "Acabamento espelhado", "Tampa hermética", "Design minimalista"],
+  },
+  {
+    id: 13,
+    name: "Ensacador de Guarda-Chuvas Automático",
+    category: "Utilitários",
+    description: "Sistema automático de ensacamento para entrada de hotéis. Tecnologia e praticidade que impressionam hóspedes.",
+    image: ensacadorGuardaChuvasImg,
+    features: ["Sistema automático", "Grande capacidade", "Design premium", "Fácil reposição"],
+  },
+  {
+    id: 14,
     name: "Lixeira Aro Inox 50L",
     category: "Lixeiras Inox",
     description: "Versatilidade e durabilidade para qualquer ambiente. Escolha dos arquitetos para projetos corporativos.",

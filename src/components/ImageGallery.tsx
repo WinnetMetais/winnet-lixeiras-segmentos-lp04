@@ -10,6 +10,14 @@ import lixeiraPedalImg from "@/assets/lixeira-pedal-banheiro.png";
 import placaSinalizacaoImg from "@/assets/placa-sinalizacao-hotel.png";
 import portaGuardaChuvaImg from "@/assets/porta-guarda-chuva-hotel.png";
 import bituqueiraImg from "@/assets/bituqueira-hotel-externa.png";
+import lixeiraRedondaLobbyImg from "@/assets/lixeira-redonda-lobby.png";
+import lixeiraQuadradaRestauranteImg from "@/assets/lixeira-quadrada-restaurante.png";
+import lixeiraBasculanteLobbyImg from "@/assets/lixeira-basculante-lobby.png";
+import bituqueiraParedeImg from "@/assets/bituqueira-parede-externa.png";
+import bituqueiraTorreImg from "@/assets/bituqueira-torre-entrada.png";
+import lixeiraPedalCozinhaImg from "@/assets/lixeira-pedal-cozinha.png";
+import lixeiraPedalSpaImg from "@/assets/lixeira-pedal-spa.png";
+import ensacadorGuardaChuvasImg from "@/assets/ensacador-guarda-chuvas.png";
 
 const galleryImages = [
   {
@@ -52,9 +60,73 @@ const galleryImages = [
     description: "Sinalização premium em inox para áreas de alto fluxo em hotéis e condomínios",
     location: "Corredor Hotel",
   },
+  {
+    id: 6,
+    src: lixeiraRedondaLobbyImg,
+    title: "Lixeira Redonda Basculante",
+    category: "Recepção e Lobby",
+    description: "Lixeira elegante com abertura basculante, perfeita para lobbies e recepções de alto padrão",
+    location: "Lobby Hotel Executivo",
+  },
+  {
+    id: 7,
+    src: lixeiraQuadradaRestauranteImg,
+    title: "Lixeira Quadrada Basculante Premium",
+    category: "Restaurantes e Bares",
+    description: "Design moderno e compacto em aço inox, ideal para restaurantes e áreas gourmet sofisticadas",
+    location: "Restaurante Hotel",
+  },
+  {
+    id: 8,
+    src: lixeiraBasculanteLobbyImg,
+    title: "Lixeira Basculante Clássica",
+    category: "Recepção e Lobby",
+    description: "Modelo premium com tampa basculante e acabamento espelhado para lobbies de hotéis cinco estrelas",
+    location: "Lobby Hotel 5 Estrelas",
+  },
+  {
+    id: 9,
+    src: bituqueiraParedeImg,
+    title: "Bituqueira de Parede Space",
+    category: "Áreas Externas",
+    description: "Solução de parede para áreas externas, design discreto e funcional em aço inox",
+    location: "Entrada Hotel",
+  },
+  {
+    id: 10,
+    src: bituqueiraTorreImg,
+    title: "Bituqueira Torre com Base",
+    category: "Áreas Externas",
+    description: "Torre elegante para áreas externas com base fixa, resistente e de fácil manutenção",
+    location: "Entrada Principal Hotel",
+  },
+  {
+    id: 11,
+    src: lixeiraPedalCozinhaImg,
+    title: "Lixeira Pedal com Alça - Cozinha",
+    category: "Cozinhas e Copa",
+    description: "Grande capacidade com pedal e alça lateral, perfeita para cozinhas profissionais e copas",
+    location: "Cozinha Residencial Premium",
+  },
+  {
+    id: 12,
+    src: lixeiraPedalSpaImg,
+    title: "Lixeira Pedal Spa & Wellness",
+    category: "SPA e Wellness",
+    description: "Design elegante e higiênico para áreas de spa, sauna e wellness centers",
+    location: "SPA Hotel Resort",
+  },
+  {
+    id: 13,
+    src: ensacadorGuardaChuvasImg,
+    title: "Ensacador de Guarda-Chuvas Automático",
+    category: "Recepção e Lobby",
+    description: "Sistema automático de ensacamento de guarda-chuvas para entrada de hotéis premium",
+    location: "Entrada Hotel Premium",
+  },
 ];
 
-const categories = ["Todos", "Banheiros", "Recepção e Lobby", "Áreas Comuns", "Áreas Externas", "Corredores e Circulação"];
+const categories = ["Todos", "Banheiros", "Recepção e Lobby", "Áreas Comuns", "Áreas Externas", "Corredores e Circulação", "Restaurantes e Bares", "Cozinhas e Copa", "SPA e Wellness"];
 
 export const ImageGallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
