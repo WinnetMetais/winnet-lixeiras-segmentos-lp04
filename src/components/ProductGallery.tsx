@@ -25,9 +25,9 @@ const products = [
     id: 1,
     name: "Conjunto Coleta Seletiva Premium",
     category: "Coleta Seletiva",
-    description: "Conjunto completo em aço inox AISI 304 com identificação colorida. Perfeito para áreas comuns de hotéis, condomínios e resorts.",
+    description: "Conjunto completo em aço inox AISI 430 e 304 com identificação colorida. Perfeito para áreas comuns de hotéis, condomínios e resorts.",
     image: coletaSeletivaImg,
-    features: ["AISI 304", "Capacidade 60L cada", "Aros coloridos", "Identificação clara"],
+    features: ["AISI 430 e 304", "Capacidade 60L cada", "Aros coloridos", "Identificação clara"],
   },
   {
     id: 2,
@@ -67,14 +67,14 @@ const products = [
     category: "Lixeiras Inox",
     description: "Versatilidade e durabilidade para qualquer ambiente. Escolha dos arquitetos para projetos corporativos.",
     image: null,
-    features: ["Aro removível", "Diversos tamanhos", "Personalização", "AISI 304"],
+    features: ["Aro removível", "Diversos tamanhos", "Personalização", "AISI 430 e 304"],
   },
 ];
 
 export const ProductGallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
-  const whatsappLink = "https://wa.me/5511978791851?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20Winnet.";
+  const whatsappLink = "https://wa.me/5511959105205?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20Winnet.";
 
   const filteredProducts = selectedCategory === "Todos" 
     ? products 

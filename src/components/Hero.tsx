@@ -3,7 +3,7 @@ import { MessageCircle, Award, Shield, Leaf } from "lucide-react";
 import coletaSeletivaImg from "@/assets/coleta-seletiva-conjunto.png";
 
 export const Hero = () => {
-  const whatsappLink = "https://wa.me/5511978791851?text=Olá!%20Vim%20através%20do%20site%20e%20gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20hotel/condomínio/resort.";
+  const whatsappLink = "https://wa.me/5511959105205?text=Olá!%20Vim%20através%20do%20site%20e%20gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20hotel/condomínio/resort.";
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-secondary">
@@ -104,7 +104,7 @@ export const Hero = () => {
             </div>
             {/* Floating Badge */}
             <div className="absolute -bottom-6 -right-6 bg-white text-primary p-6 rounded-2xl shadow-strong animate-pulse-glow">
-              <p className="text-3xl font-bold">15+</p>
+              <p className="text-3xl font-bold">3+</p>
               <p className="text-sm font-medium">Anos de</p>
               <p className="text-sm font-medium">Excelência</p>
             </div>

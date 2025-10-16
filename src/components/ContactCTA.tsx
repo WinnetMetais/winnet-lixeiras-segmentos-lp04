@@ -3,9 +3,9 @@ import { MessageCircle, Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 export const ContactCTA = () => {
-  const whatsappLink = "https://wa.me/5511978791851?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20empreendimento.";
-  const phoneNumber = "(11) 97879-1851";
-  const email = "atendimento@winnetmetais.com.br";
+  const whatsappLink = "https://wa.me/5511959105205?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20empreendimento.";
+  const phoneNumber = "(11) 95910-5205";
+  const email = "comercial@winnetmetais.com.br";
 
   return (
     <section className="py-24 bg-background">
@@ -78,7 +78,7 @@ export const ContactCTA = () => {
                   <div>
                     <p className="font-semibold text-foreground mb-1">Telefone</p>
                     <p className="text-secondary font-bold">{phoneNumber}</p>
-                    <p className="text-sm text-muted-foreground">Seg a Sex, 9h às 18h</p>
+                    <p className="text-sm text-muted-foreground">Seg a Sex, 9h às 17h</p>
                   </div>
                 </div>
 
@@ -102,8 +102,7 @@ export const ContactCTA = () => {
                   <div>
                     <p className="font-semibold text-foreground mb-1">Horário de Atendimento</p>
                     <p className="text-sm text-muted-foreground">
-                      Segunda a Sexta: 9h às 18h<br />
-                      Sábado: 9h às 13h
+                      Segunda a Sexta: 9h às 17h
                     </p>
                   </div>
                 </div>
@@ -116,8 +115,8 @@ export const ContactCTA = () => {
                   <div>
                     <p className="font-semibold text-foreground mb-1">Localização</p>
                     <p className="text-sm text-muted-foreground">
-                      Atendemos todo o Brasil<br />
-                      São Paulo - SP
+                      Av. Wallace Simonsen, 435 - Nova Petropolis<br />
+                      São Bernardo do Campo - SP
                     </p>
                   </div>
                 </div>
@@ -133,11 +132,11 @@ export const ContactCTA = () => {
             <p className="text-sm text-muted-foreground">Resposta ao orçamento</p>
           </div>
           <div className="p-6 rounded-xl bg-secondary/5">
-            <p className="text-3xl font-bold text-secondary mb-2">15+</p>
+            <p className="text-3xl font-bold text-secondary mb-2">3+</p>
             <p className="text-sm text-muted-foreground">Anos de experiência</p>
           </div>
           <div className="p-6 rounded-xl bg-accent/5">
-            <p className="text-3xl font-bold text-accent mb-2">5000+</p>
+            <p className="text-3xl font-bold text-accent mb-2">1000+</p>
             <p className="text-sm text-muted-foreground">Projetos entregues</p>
           </div>
           <div className="p-6 rounded-xl bg-primary/5">

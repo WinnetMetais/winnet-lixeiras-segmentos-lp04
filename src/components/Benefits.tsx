@@ -26,7 +26,7 @@ const benefits = [
   {
     icon: Shield,
     title: "Garantia Estendida",
-    description: "Aço inox AISI 304 com tratamento anticorrosivo. Garantimos a durabilidade em qualquer ambiente.",
+    description: "Aço inox AISI 430 e 304 com tratamento anticorrosivo. Garantimos a durabilidade em qualquer ambiente.",
     color: "text-primary",
     bgColor: "bg-primary/10",
   },
@@ -92,11 +92,11 @@ export const Benefits = () => {
         {/* Stats Section */}
         <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8 p-12 bg-gradient-to-r from-primary to-secondary rounded-3xl shadow-strong">
           <div className="text-center text-white">
-            <p className="text-5xl font-bold mb-2">15+</p>
+            <p className="text-5xl font-bold mb-2">3+</p>
             <p className="text-white/90 font-medium">Anos de Mercado</p>
           </div>
           <div className="text-center text-white">
-            <p className="text-5xl font-bold mb-2">5000+</p>
+            <p className="text-5xl font-bold mb-2">1000+</p>
             <p className="text-white/90 font-medium">Projetos Entregues</p>
           </div>
           <div className="text-center text-white">

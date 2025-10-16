@@ -17,7 +17,7 @@ const galleryImages = [
     src: coletaSeletivaImg,
     title: "Conjunto Coleta Seletiva Premium",
     category: "Coleta Seletiva",
-    description: "Sistema completo de coleta seletiva em aço inox AISI 304 com aros coloridos para fácil identificação",
+    description: "Sistema completo de coleta seletiva em aço inox AISI 430 e 304 com aros coloridos para fácil identificação",
     location: "Ambiente Corporativo",
   },
   {

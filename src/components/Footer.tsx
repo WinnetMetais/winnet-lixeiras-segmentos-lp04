@@ -1,7 +1,7 @@
 import { MessageCircle, Mail, Phone, MapPin } from "lucide-react";
 
 export const Footer = () => {
-  const whatsappLink = "https://wa.me/5511978791851";
+  const whatsappLink = "https://wa.me/5511959105205";
   const currentYear = new Date().getFullYear();
 
   return (
@@ -55,21 +55,21 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-white">(11) 97879-1851</p>
-                  <p className="text-xs">Seg a Sex, 9h às 18h</p>
+                  <p className="font-semibold text-white">(11) 95910-5205</p>
+                  <p className="text-xs">Seg a Sex, 9h às 17h</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="break-all">atendimento@winnetmetais.com.br</p>
+                  <p className="break-all">comercial@winnetmetais.com.br</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                 <div>
-                  <p>São Paulo - SP</p>
-                  <p className="text-xs">Atendemos todo Brasil</p>
+                  <p>Av. Wallace Simonsen, 435</p>
+                  <p className="text-xs">Nova Petropolis - São Bernardo do Campo - SP</p>
                 </div>
               </li>
             </ul>
