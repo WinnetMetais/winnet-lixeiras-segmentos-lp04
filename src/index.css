@@ -44,11 +44,14 @@ All colors MUST be HSL.
     --gradient-primary: linear-gradient(135deg, hsl(207 100% 40%), hsl(207 100% 50%));
     --gradient-hero: linear-gradient(135deg, hsl(207 100% 40%) 0%, hsl(207 100% 50%) 50%, hsl(12 100% 64%) 100%);
     --gradient-accent: linear-gradient(90deg, hsl(12 100% 64%), hsl(45 100% 51%));
+    --gradient-tech: linear-gradient(135deg, hsl(207 100% 15%) 0%, hsl(220 20% 10%) 100%);
     
     /* Shadows */
     --shadow-soft: 0 2px 20px rgba(0, 102, 204, 0.08);
     --shadow-medium: 0 8px 32px rgba(0, 102, 204, 0.12);
     --shadow-strong: 0 20px 60px rgba(0, 102, 204, 0.2);
+    --shadow-neon: 0 0 30px rgba(0, 102, 204, 0.6), 0 0 60px rgba(0, 102, 204, 0.3);
+    --shadow-glow: 0 0 20px rgba(255, 193, 7, 0.5);
     
     /* Transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -117,5 +120,30 @@ All colors MUST be HSL.
   
   .glass-effect {
     @apply backdrop-blur-lg bg-white/80 border border-white/20;
+  }
+  
+  .tech-grid {
+    background-image: 
+      linear-gradient(rgba(0, 102, 204, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 102, 204, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: grid-move 20s linear infinite;
+  }
+  
+  @keyframes grid-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 50px 50px; }
+  }
+  
+  .neon-border {
+    box-shadow: 0 0 10px rgba(0, 102, 204, 0.5),
+                0 0 20px rgba(0, 102, 204, 0.3),
+                inset 0 0 10px rgba(0, 102, 204, 0.2);
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 10px rgba(255, 193, 7, 0.8),
+                 0 0 20px rgba(255, 193, 7, 0.6),
+                 0 0 30px rgba(255, 193, 7, 0.4);
   }
 }

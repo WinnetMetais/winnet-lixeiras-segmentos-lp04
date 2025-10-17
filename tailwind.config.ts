@@ -90,11 +90,36 @@ export default {
         },
         "float": {
           "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
+          "50%": { transform: "translateY(-20px)" },
         },
         "pulse-glow": {
           "0%, 100%": { opacity: "1", boxShadow: "0 0 20px rgba(0, 102, 204, 0.4)" },
           "50%": { opacity: "0.8", boxShadow: "0 0 40px rgba(0, 102, 204, 0.6)" },
+        },
+        "rotate-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        "spin-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        "orbit": {
+          "0%": { transform: "rotate(0deg) translateX(100px) rotate(0deg)" },
+          "100%": { transform: "rotate(360deg) translateX(100px) rotate(-360deg)" },
+        },
+        "slide-up-down": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-30px)" },
+        },
+        "shimmer": {
+          "0%": { backgroundPosition: "-1000px 0" },
+          "100%": { backgroundPosition: "1000px 0" },
+        },
+        "particle-float": {
+          "0%, 100%": { transform: "translate(0, 0)" },
+          "33%": { transform: "translate(30px, -30px)" },
+          "66%": { transform: "translate(-20px, 20px)" },
         },
       },
       animation: {
@@ -104,8 +129,14 @@ export default {
         "fade-in-up": "fade-in-up 0.8s ease-out",
         "scale-in": "scale-in 0.4s ease-out",
         "slide-in-right": "slide-in-right 0.5s ease-out",
-        "float": "float 3s ease-in-out infinite",
+        "float": "float 6s ease-in-out infinite",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "rotate-slow": "rotate-slow 20s linear infinite",
+        "spin-slow": "spin-slow 30s linear infinite",
+        "orbit": "orbit 15s linear infinite",
+        "slide-up-down": "slide-up-down 4s ease-in-out infinite",
+        "shimmer": "shimmer 3s linear infinite",
+        "particle-float": "particle-float 10s ease-in-out infinite",
       },
     },
   },
