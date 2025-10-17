@@ -79,7 +79,7 @@ const products = [
   },
   {
     id: 7,
-    name: "Lixeira Quadrada Basculante Premium",
+    name: "Lixeira Inox com Tampa",
     category: "Lixeiras Inox",
     description: "Design moderno e compacto, perfeita para restaurantes, bares e áreas gourmet de alto padrão.",
     image: lixeiraQuadradaRestauranteImg,
