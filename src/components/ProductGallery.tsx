@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Trash2, Recycle, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+// Updated product gallery
 
 // Import real product images
 import coletaSeletivaImg from "@/assets/coleta-seletiva-conjunto.png";
