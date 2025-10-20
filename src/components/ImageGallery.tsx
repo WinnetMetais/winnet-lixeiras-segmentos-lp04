@@ -31,9 +31,9 @@ const galleryImages = [
   {
     id: 2,
     src: lixeiraPedalImg,
-    title: "Lixeira com Pedal - Banheiro",
+    title: "Lixeira Inox com Tampa - Banheiro",
     category: "Banheiros",
-    description: "Design compacto e sofisticado ideal para banheiros de hotéis e suítes premium",
+    description: "Solução higiênica e elegante em aço inox, ideal para banheiros de hotéis e suítes premium",
     location: "Banheiro Hotel 5 Estrelas",
   },
   {
