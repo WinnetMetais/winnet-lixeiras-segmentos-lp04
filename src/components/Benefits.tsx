@@ -61,7 +61,7 @@ export const Benefits = () => {
             <span className="text-gradient"> Mercado Corporativo</span>
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Mais de 15 anos fornecendo equipamentos premium para os empreendimentos mais exigentes do Brasil
+            Mais de 3 anos fornecendo equipamentos premium para os empreendimentos mais exigentes do Brasil
           </p>
         </div>
 
