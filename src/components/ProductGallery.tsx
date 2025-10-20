@@ -80,11 +80,11 @@ const products = [
   },
   {
     id: 7,
-    name: "Lixeira Inox com Tampa",
+    name: "Lixeira Inox com Tampa - Banheiro",
     category: "Lixeiras Inox",
-    description: "Design moderno e compacto, perfeita para restaurantes, bares e áreas gourmet de alto padrão.",
+    description: "Solução higiênica e elegante em aço inox, ideal para banheiros de hotéis, spas e ambientes corporativos premium.",
     image: lixeiraQuadradaRestauranteImg,
-    features: ["Design moderno", "30-50 litros", "Tampa basculante", "Acabamento escovado"],
+    features: ["Design higiênico", "Tampa basculante", "Resistente à umidade", "Fácil limpeza"],
   },
   {
     id: 8,

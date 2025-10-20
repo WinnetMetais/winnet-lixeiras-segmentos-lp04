@@ -71,10 +71,10 @@ const galleryImages = [
   {
     id: 7,
     src: lixeiraQuadradaRestauranteImg,
-    title: "Lixeira Quadrada Basculante Premium",
-    category: "Restaurantes e Bares",
-    description: "Design moderno e compacto em aço inox, ideal para restaurantes e áreas gourmet sofisticadas",
-    location: "Restaurante Hotel",
+    title: "Lixeira Inox com Tampa - Banheiro",
+    category: "Banheiros",
+    description: "Solução higiênica e elegante em aço inox para banheiros de hotéis e ambientes corporativos premium",
+    location: "Banheiro Hotel Premium",
   },
   {
     id: 8,
