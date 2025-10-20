@@ -106,9 +106,9 @@ const products = [
     id: 10,
     name: "Bituqueira Torre com Base",
     category: "Utilitários",
-    description: "Torre elegante com base fixa para entrada principal. Resistência e sofisticação para áreas de alto fluxo.",
+    description: "Torre elegante para entrada principal. Resistência e sofisticação para áreas de alto fluxo.",
     image: bituqueiraTorreImg,
-    features: ["Base fixa", "Design vertical", "Alta capacidade", "Acabamento premium"],
+    features: ["Design vertical", "Alta capacidade", "Acabamento premium", "Resistente"],
   },
   {
     id: 11,
@@ -128,11 +128,11 @@ const products = [
   },
   {
     id: 13,
-    name: "Ensacador de Guarda-Chuvas Automático",
+    name: "Ensacador de Guarda-Chuvas",
     category: "Utilitários",
-    description: "Sistema automático de ensacamento para entrada de hotéis. Tecnologia e praticidade que impressionam hóspedes.",
+    description: "Ensacamento para entrada de hotéis. Tecnologia e praticidade que impressionam hóspedes.",
     image: ensacadorGuardaChuvasImg,
-    features: ["Sistema automático", "Grande capacidade", "Design premium", "Fácil reposição"],
+    features: ["Grande capacidade", "Design premium", "Fácil reposição", "Tecnologia moderna"],
   },
   {
     id: 14,

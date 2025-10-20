@@ -97,7 +97,7 @@ const galleryImages = [
     src: bituqueiraTorreImg,
     title: "Bituqueira Torre com Base",
     category: "Áreas Externas",
-    description: "Torre elegante para áreas externas com base fixa, resistente e de fácil manutenção",
+    description: "Torre elegante para áreas externas, resistente e de fácil manutenção",
     location: "Entrada Principal Hotel",
   },
   {
@@ -119,9 +119,9 @@ const galleryImages = [
   {
     id: 13,
     src: ensacadorGuardaChuvasImg,
-    title: "Ensacador de Guarda-Chuvas Automático",
+    title: "Ensacador de Guarda-Chuvas",
     category: "Recepção e Lobby",
-    description: "Sistema automático de ensacamento de guarda-chuvas para entrada de hotéis premium",
+    description: "Ensacamento de guarda-chuvas para entrada de hotéis premium",
     location: "Entrada Hotel Premium",
   },
 ];
