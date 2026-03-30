@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "@/hooks/useGsap";
-import { X, Check } from "lucide-react";
+import { X, Check, ArrowRight } from "lucide-react";
 
 const pains = [
   "Ambientes sem padronização visual",
@@ -23,18 +23,58 @@ export const PainSolution = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(".ps-title", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out", scrollTrigger: { trigger: ref.current, start: "top 85%" } });
-      gsap.fromTo(".ps-pain", { x: -20, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.08, duration: 0.5, ease: "power3.out", scrollTrigger: { trigger: ".ps-grid", start: "top 85%" } });
-      gsap.fromTo(".ps-sol", { x: 20, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.08, duration: 0.5, ease: "power3.out", scrollTrigger: { trigger: ".ps-grid", start: "top 85%" } });
+      // Header reveal
+      gsap.fromTo(
+        ".ps-title",
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", stagger: 0.1, scrollTrigger: { trigger: ref.current, start: "top 82%" } }
+      );
+
+      // Pain cards - slide from left with rotation
+      gsap.fromTo(
+        ".ps-pain",
+        { x: -40, opacity: 0, rotateY: -5 },
+        {
+          x: 0, opacity: 1, rotateY: 0,
+          stagger: 0.1, duration: 0.6, ease: "power3.out",
+          scrollTrigger: { trigger: ".ps-grid", start: "top 82%" },
+        }
+      );
+
+      // Solution cards - slide from right with rotation
+      gsap.fromTo(
+        ".ps-sol",
+        { x: 40, opacity: 0, rotateY: 5 },
+        {
+          x: 0, opacity: 1, rotateY: 0,
+          stagger: 0.1, duration: 0.6, ease: "power3.out",
+          scrollTrigger: { trigger: ".ps-grid", start: "top 82%" },
+        }
+      );
+
+      // Container cards entrance
+      gsap.fromTo(
+        ".ps-card",
+        { y: 50, opacity: 0, scale: 0.97 },
+        {
+          y: 0, opacity: 1, scale: 1,
+          stagger: 0.15, duration: 0.8, ease: "power3.out",
+          scrollTrigger: { trigger: ".ps-grid", start: "top 85%" },
+        }
+      );
     }, ref);
     return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={ref} className="py-24 lg:py-32 bg-background">
-      <div className="container mx-auto px-4">
+    <section ref={ref} className="py-24 lg:py-32 bg-background relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/[0.02] rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/[0.03] rounded-full blur-3xl" />
+
+      <div className="container mx-auto px-4 relative">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="ps-title text-sm font-body font-semibold text-accent uppercase tracking-wider mb-4 opacity-0">
+          <p className="ps-title text-sm font-body font-semibold text-accent uppercase tracking-[0.2em] mb-4 opacity-0">
             Por que escolher a Winnet?
           </p>
           <h2 className="ps-title text-3xl lg:text-5xl mb-6 opacity-0">
@@ -47,25 +87,45 @@ export const PainSolution = () => {
 
         <div className="ps-grid grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Pains */}
-          <div className="bg-muted rounded-xl p-8 lg:p-10">
-            <h3 className="font-display text-xl font-bold mb-6 text-foreground">O cenário sem a Winnet</h3>
+          <div className="ps-card bg-muted rounded-2xl p-8 lg:p-10 opacity-0 relative overflow-hidden group hover:shadow-lg transition-shadow duration-500">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-destructive/60 to-destructive/0" />
+            <h3 className="font-display text-xl font-bold mb-6 text-foreground flex items-center gap-3">
+              <span className="w-10 h-10 rounded-full bg-destructive/10 flex items-center justify-center">
+                <X className="w-5 h-5 text-destructive" />
+              </span>
+              O cenário sem a Winnet
+            </h3>
             <ul className="space-y-4">
               {pains.map((pain, i) => (
-                <li key={i} className="ps-pain flex items-start gap-3 opacity-0">
-                  <X className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                <li key={i} className="ps-pain flex items-start gap-3 opacity-0 group/item">
+                  <span className="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:bg-destructive/20 transition-colors">
+                    <X className="w-3.5 h-3.5 text-destructive" />
+                  </span>
                   <span className="text-sm font-body text-muted-foreground leading-relaxed">{pain}</span>
                 </li>
               ))}
             </ul>
           </div>
 
+          {/* Arrow between */}
+          <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+          </div>
+
           {/* Solutions */}
-          <div className="bg-primary/[0.03] border border-accent/20 rounded-xl p-8 lg:p-10">
-            <h3 className="font-display text-xl font-bold mb-6 text-foreground">Com a Winnet Metais</h3>
+          <div className="ps-card bg-accent/[0.04] border border-accent/20 rounded-2xl p-8 lg:p-10 opacity-0 relative overflow-hidden group hover:shadow-lg hover:border-accent/30 transition-all duration-500">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent/80 to-accent/0" />
+            <h3 className="font-display text-xl font-bold mb-6 text-foreground flex items-center gap-3">
+              <span className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                <Check className="w-5 h-5 text-accent" />
+              </span>
+              Com a Winnet Metais
+            </h3>
             <ul className="space-y-4">
               {solutions.map((sol, i) => (
-                <li key={i} className="ps-sol flex items-start gap-3 opacity-0">
-                  <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                <li key={i} className="ps-sol flex items-start gap-3 opacity-0 group/item">
+                  <span className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:bg-accent/20 transition-colors">
+                    <Check className="w-3.5 h-3.5 text-accent" />
+                  </span>
                   <span className="text-sm font-body text-foreground leading-relaxed">{sol}</span>
                 </li>
               ))}
