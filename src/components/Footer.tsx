@@ -1,4 +1,5 @@
 import { MessageCircle, Mail, Phone, MapPin } from "lucide-react";
+import logoWinnet from "@/assets/logo-winnet.png";
 
 export const Footer = () => {
   const whatsappLink = "https://wa.me/5511959105205";
