@@ -16,14 +16,14 @@ export const CredibilityBar = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".cred-item",
-        { y: 20, opacity: 0 },
+        { y: 15, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          stagger: 0.1,
-          duration: 0.6,
+          stagger: 0.08,
+          duration: 0.5,
           ease: "power3.out",
-          scrollTrigger: { trigger: ref.current, start: "top 90%" },
+          scrollTrigger: { trigger: ref.current, start: "top 92%" },
         }
       );
     }, ref);
@@ -31,14 +31,18 @@ export const CredibilityBar = () => {
   }, []);
 
   return (
-    <div ref={ref} className="bg-secondary border-y border-border">
-      <div className="container mx-auto px-4 py-6">
+    <div ref={ref} className="bg-secondary border-y border-border overflow-hidden relative">
+      {/* Subtle inox shine sweep */}
+      <div className="absolute inset-0 inox-shine pointer-events-none opacity-50" />
+      <div className="container mx-auto px-4 py-6 relative">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {items.map((item, i) => {
             const Icon = item.icon;
             return (
-              <div key={i} className="cred-item flex items-center gap-3 opacity-0">
-                <Icon className="w-5 h-5 text-accent flex-shrink-0" />
+              <div key={i} className="cred-item flex items-center gap-3 opacity-0 group cursor-default">
+                <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300">
+                  <Icon className="w-4 h-4 text-accent group-hover:scale-110 transition-transform duration-300" />
+                </div>
                 <span className="text-sm font-body font-medium text-secondary-foreground">{item.label}</span>
               </div>
             );

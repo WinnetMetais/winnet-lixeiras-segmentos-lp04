@@ -10,7 +10,6 @@ const metrics = [
 
 const AnimatedCounter = ({ target, suffix, duration, trigger }: { target: number; suffix: string; duration: number; trigger: boolean }) => {
   const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     if (!trigger) return;
@@ -24,7 +23,7 @@ const AnimatedCounter = ({ target, suffix, duration, trigger }: { target: number
   }, [trigger, target, duration]);
 
   return (
-    <span ref={ref}>
+    <span>
       {count.toLocaleString("pt-BR")}
       {suffix}
     </span>
@@ -39,13 +38,10 @@ export const SocialProof = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".sp-item",
-        { y: 30, opacity: 0 },
+        { y: 30, opacity: 0, scale: 0.9 },
         {
-          y: 0,
-          opacity: 1,
-          stagger: 0.1,
-          duration: 0.6,
-          ease: "power3.out",
+          y: 0, opacity: 1, scale: 1,
+          stagger: 0.1, duration: 0.7, ease: "back.out(1.3)",
           scrollTrigger: {
             trigger: ref.current,
             start: "top 88%",
@@ -58,14 +54,16 @@ export const SocialProof = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-16 lg:py-20 bg-primary">
-      <div className="container mx-auto px-4">
+    <section ref={ref} className="py-16 lg:py-20 bg-primary relative overflow-hidden">
+      <div className="absolute inset-0 inox-shine pointer-events-none opacity-20" />
+      <div className="container mx-auto px-4 relative">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {metrics.map((m, i) => (
-            <div key={i} className="sp-item text-center opacity-0">
-              <p className="text-4xl lg:text-5xl font-display font-bold text-accent mb-2">
+            <div key={i} className="sp-item text-center opacity-0 group cursor-default">
+              <p className="text-4xl lg:text-5xl font-display font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">
                 <AnimatedCounter target={m.value} suffix={m.suffix} duration={m.duration} trigger={started} />
               </p>
+              <div className="w-8 h-[1px] bg-primary-foreground/20 mx-auto mb-2" />
               <p className="text-sm font-body font-medium text-primary-foreground/80 tracking-wide uppercase">
                 {m.label}
               </p>
