@@ -1,5 +1,7 @@
+import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { CredibilityBar } from "@/components/CredibilityBar";
+import { SocialProof } from "@/components/SocialProof";
 import { PainSolution } from "@/components/PainSolution";
 import { Segments } from "@/components/Segments";
 import { Solutions } from "@/components/Solutions";
@@ -16,8 +18,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <ScrollProgress />
+      <Navbar />
       <Hero />
       <CredibilityBar />
+      <SocialProof />
       <PainSolution />
       <Segments />
       <Solutions />
