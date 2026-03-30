@@ -2,90 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 15% 20%;
+    --foreground: 220 20% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 20%;
+    --card-foreground: 220 20% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 20%;
+    --popover-foreground: 220 20% 12%;
 
-    /* Winnet Brand Colors */
-    --primary: 207 100% 40%;  /* Professional Blue #0066CC */
+    --primary: 215 60% 22%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 207 100% 90%;
-    
-    --secondary: 12 100% 64%;  /* Vibrant Coral #FF6B4A */
-    --secondary-foreground: 0 0% 100%;
-    
-    --accent: 45 100% 51%;  /* Energy Yellow #FFC107 */
-    --accent-foreground: 220 15% 20%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 220 10% 45%;
+    --secondary: 215 25% 92%;
+    --secondary-foreground: 215 60% 22%;
+
+    --accent: 215 80% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 46%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 207 100% 40%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 215 80% 48%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Premium gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(207 100% 40%), hsl(207 100% 50%));
-    --gradient-hero: linear-gradient(135deg, hsl(207 100% 40%) 0%, hsl(207 100% 50%) 50%, hsl(12 100% 64%) 100%);
-    --gradient-accent: linear-gradient(90deg, hsl(12 100% 64%), hsl(45 100% 51%));
-    --gradient-tech: linear-gradient(135deg, hsl(207 100% 15%) 0%, hsl(220 20% 10%) 100%);
-    
-    /* Shadows */
-    --shadow-soft: 0 2px 20px rgba(0, 102, 204, 0.08);
-    --shadow-medium: 0 8px 32px rgba(0, 102, 204, 0.12);
-    --shadow-strong: 0 20px 60px rgba(0, 102, 204, 0.2);
-    --shadow-neon: 0 0 30px rgba(0, 102, 204, 0.6), 0 0 60px rgba(0, 102, 204, 0.3);
-    --shadow-glow: 0 0 20px rgba(255, 193, 7, 0.5);
-    
-    /* Transitions */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-fast: all 0.2s ease;
+    --surface-elevated: 0 0% 100%;
+    --surface-sunken: 220 14% 97%;
+    --inox-gradient: linear-gradient(135deg, hsl(220 10% 85%), hsl(220 10% 95%), hsl(220 10% 88%));
   }
 
   .dark {
-    --background: 220 20% 10%;
+    --background: 220 20% 6%;
     --foreground: 0 0% 95%;
-
-    --card: 220 20% 12%;
+    --card: 220 20% 8%;
     --card-foreground: 0 0% 95%;
-
-    --popover: 220 20% 12%;
+    --popover: 220 20% 8%;
     --popover-foreground: 0 0% 95%;
-
-    --primary: 207 100% 50%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 12 100% 64%;
-    --secondary-foreground: 0 0% 100%;
-
-    --accent: 45 100% 51%;
-    --accent-foreground: 220 15% 20%;
-
-    --muted: 220 20% 18%;
+    --primary: 215 60% 70%;
+    --primary-foreground: 220 20% 6%;
+    --secondary: 215 25% 15%;
+    --secondary-foreground: 0 0% 95%;
+    --accent: 215 80% 55%;
+    --accent-foreground: 0 0% 100%;
+    --muted: 220 20% 14%;
     --muted-foreground: 220 10% 65%;
-
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
-
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
-    --ring: 207 100% 50%;
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 215 80% 55%;
   }
 }
 
@@ -96,54 +71,50 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
     font-feature-settings: "liga" 1, "calt" 1;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
     @apply font-bold tracking-tight;
   }
 }
 
 @layer utilities {
-  .text-gradient {
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .text-gradient-corporate {
     @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-hero);
+    background-image: linear-gradient(135deg, hsl(215 80% 48%), hsl(215 60% 22%));
   }
-  
-  .hover-scale {
-    @apply transition-transform duration-300 hover:scale-105;
+
+  .inox-shine {
+    background: linear-gradient(
+      120deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.08) 38%,
+      rgba(255, 255, 255, 0.12) 40%,
+      rgba(255, 255, 255, 0.08) 42%,
+      transparent 50%
+    );
+    background-size: 200% 100%;
+    animation: inox-sweep 4s ease-in-out infinite;
   }
-  
-  .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-2;
+
+  @keyframes inox-sweep {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
   }
-  
-  .glass-effect {
-    @apply backdrop-blur-lg bg-white/80 border border-white/20;
-  }
-  
-  .tech-grid {
-    background-image: 
-      linear-gradient(rgba(0, 102, 204, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 102, 204, 0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: grid-move 20s linear infinite;
-  }
-  
-  @keyframes grid-move {
-    0% { background-position: 0 0; }
-    100% { background-position: 50px 50px; }
-  }
-  
-  .neon-border {
-    box-shadow: 0 0 10px rgba(0, 102, 204, 0.5),
-                0 0 20px rgba(0, 102, 204, 0.3),
-                inset 0 0 10px rgba(0, 102, 204, 0.2);
-  }
-  
-  .glow-text {
-    text-shadow: 0 0 10px rgba(255, 193, 7, 0.8),
-                 0 0 20px rgba(255, 193, 7, 0.6),
-                 0 0 30px rgba(255, 193, 7, 0.4);
+
+  .scroll-progress-bar {
+    @apply fixed top-0 left-0 h-[2px] bg-accent z-[9999];
+    transform-origin: left;
   }
 }
