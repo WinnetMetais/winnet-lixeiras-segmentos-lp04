@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Menu, X } from "lucide-react";
+import logoWinnet from "@/assets/logo-winnet.png";
 
 const navLinks = [
   { label: "Soluções", href: "#solucoes" },
@@ -43,16 +44,13 @@ export const Navbar = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="flex items-center gap-2 group"
           >
-            <div className="w-8 h-8 rounded-md bg-accent flex items-center justify-center">
-              <span className="text-accent-foreground font-display font-bold text-sm">W</span>
-            </div>
-            <span
-              className={`font-display font-bold text-lg tracking-tight transition-colors ${
-                scrolled ? "text-foreground" : "text-primary-foreground"
+            <img
+              src={logoWinnet}
+              alt="Winnet Metais"
+              className={`h-9 lg:h-10 w-auto transition-all duration-300 ${
+                scrolled ? "" : "brightness-0 invert"
               }`}
-            >
-              Winnet<span className="text-accent">.</span>
-            </span>
+            />
           </button>
 
           {/* Desktop Nav */}
