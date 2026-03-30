@@ -10,7 +10,7 @@ export const Footer = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
-            <h3 className="font-display text-2xl font-bold mb-4">Winnet Metais</h3>
+            <img src={logoWinnet} alt="Winnet Metais" className="h-10 w-auto brightness-0 invert mb-4" />
             <p className="text-primary-foreground/70 font-body text-sm leading-relaxed mb-6">
               Soluções premium em aço inox para ambientes corporativos de alto padrão.
             </p>
