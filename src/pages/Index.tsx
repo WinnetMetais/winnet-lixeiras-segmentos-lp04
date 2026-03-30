@@ -1,21 +1,31 @@
 import { Hero } from "@/components/Hero";
-import { Benefits } from "@/components/Benefits";
-import { ProductGallery } from "@/components/ProductGallery";
-import { ImageGallery } from "@/components/ImageGallery";
-import { UseCases } from "@/components/UseCases";
-import { ContactCTA } from "@/components/ContactCTA";
+import { CredibilityBar } from "@/components/CredibilityBar";
+import { PainSolution } from "@/components/PainSolution";
+import { Segments } from "@/components/Segments";
+import { Solutions } from "@/components/Solutions";
+import { Differentials } from "@/components/Differentials";
+import { ProofVisual } from "@/components/ProofVisual";
+import { ProcessSteps } from "@/components/ProcessSteps";
+import { ConversionForm } from "@/components/ConversionForm";
+import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { ScrollProgress } from "@/components/ScrollProgress";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <ScrollProgress />
       <Hero />
-      <Benefits />
-      <ProductGallery />
-      <ImageGallery />
-      <UseCases />
-      <ContactCTA />
+      <CredibilityBar />
+      <PainSolution />
+      <Segments />
+      <Solutions />
+      <Differentials />
+      <ProofVisual />
+      <ProcessSteps />
+      <ConversionForm />
+      <FinalCTA />
       <Footer />
       <WhatsAppButton />
     </div>
