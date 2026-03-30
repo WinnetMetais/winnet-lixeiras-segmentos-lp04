@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Menu, X } from "lucide-react";
+import logoWinnet from "@/assets/logo-winnet.png";
 
 const navLinks = [
   { label: "Soluções", href: "#solucoes" },
