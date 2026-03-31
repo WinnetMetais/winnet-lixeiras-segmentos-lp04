@@ -220,7 +220,7 @@ export const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2.5 text-white text-[0.7rem] sm:text-xs tracking-[0.2em] opacity-70 z-20">
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white text-[0.65rem] sm:text-xs tracking-[0.2em] opacity-60 z-20">
         <div className="w-5 h-8 sm:w-6 sm:h-9 border border-white rounded-xl relative">
           <div
             className="w-1 h-1.5 bg-white rounded-full absolute left-1/2 -translate-x-1/2"
