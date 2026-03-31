@@ -147,7 +147,7 @@ export const Hero = () => {
               src={slide.image}
               alt={`Winnet - ${slide.title}`}
               className="w-full h-full object-cover"
-              style={{ objectPosition: "center 40%" }}
+              style={{ objectPosition: slide.objectPosition }}
             />
             <div
               className="absolute inset-0 pointer-events-none"
