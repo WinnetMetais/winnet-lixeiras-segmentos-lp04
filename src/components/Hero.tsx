@@ -19,6 +19,7 @@ const slidesData = [
     title: "PRATICIDADE",
     subtitle: "Design inteligente em cada detalhe. O modelo de pedal que une higiene e estética.",
     image: heroCozinha,
+    objectPosition: "center 60%",
   },
   {
     id: 2,
@@ -26,6 +27,7 @@ const slidesData = [
     title: "ELEGÂNCIA",
     subtitle: "O acabamento impecável em aço inox que transforma qualquer superfície.",
     image: heroBancada,
+    objectPosition: "center 45%",
   },
   {
     id: 3,
@@ -33,6 +35,7 @@ const slidesData = [
     title: "SOFISTICAÇÃO",
     subtitle: "Resistência para durar e beleza para impressionar, mesmo em áreas abertas.",
     image: heroExterior,
+    objectPosition: "center 50%",
   },
   {
     id: 4,
@@ -40,6 +43,7 @@ const slidesData = [
     title: "ALTO PADRÃO",
     subtitle: "A escolha certa para shoppings, galerias e ambientes corporativos de luxo.",
     image: heroCorporativo,
+    objectPosition: "center 55%",
   },
 ];
 
