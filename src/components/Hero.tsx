@@ -3,10 +3,10 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MessageCircle, FileText } from "lucide-react";
 
-import heroCozinha from "@/assets/hero-cozinha.jpeg";
-import heroBancada from "@/assets/hero-bancada.jpeg";
+import heroCozinha from "@/assets/hero-cozinha.png";
+import heroBancada from "@/assets/hero-bancada.png";
 import heroExterior from "@/assets/hero-exterior.png";
-import heroCorporativo from "@/assets/hero-corporativo.jpeg";
+import heroCorporativo from "@/assets/hero-corporativo.png";
 
 const whatsappLink = "https://wa.me/5511959105205?text=Olá!%20Vim%20através%20do%20site%20e%20gostaria%20de%20mais%20informações.";
 
