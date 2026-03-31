@@ -35,7 +35,7 @@ const slidesData = [
     title: "SOFISTICAÇÃO",
     subtitle: "Resistência para durar e beleza para impressionar, mesmo em áreas abertas.",
     image: heroExterior,
-    objectPosition: "center 50%",
+    objectPosition: "center 35%",
   },
   {
     id: 4,
