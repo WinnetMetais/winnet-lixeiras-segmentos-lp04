@@ -155,31 +155,31 @@ export const Hero = () => {
           </div>
 
           <div
-            className="winnet-text absolute z-10 text-white max-w-[800px] px-6 sm:px-0"
+            className="winnet-text absolute z-10 text-white max-w-[700px] px-5 sm:px-8"
             style={{
-              bottom: "12%",
-              left: "8%",
+              bottom: "18%",
+              left: "6%",
+              right: "15%",
               ...(index === 0
                 ? { opacity: 1, transform: "translateY(0)" }
                 : { opacity: 0, transform: "translateY(50px)" }),
             }}
           >
-            <div className="inline-block text-[0.7rem] sm:text-xs tracking-[0.3em] uppercase mb-3 sm:mb-4 px-3 sm:px-4 py-1.5 border border-white/30 rounded-full backdrop-blur-sm">
+            <div className="inline-block text-[0.65rem] sm:text-xs tracking-[0.3em] uppercase mb-2 sm:mb-3 px-3 sm:px-4 py-1 sm:py-1.5 border border-white/30 rounded-full backdrop-blur-sm">
               {slide.tag}
             </div>
             <h1
-              className="font-display font-light leading-[1.1] tracking-[-0.02em] mb-3 sm:mb-4"
-              style={{ fontSize: "clamp(2.5rem, 6vw, 6rem)" }}
+              className="font-display font-light leading-[1.05] tracking-[-0.02em] mb-2 sm:mb-3"
+              style={{ fontSize: "clamp(2rem, 5vw, 5rem)" }}
             >
               {slide.title}
             </h1>
             <p
-              className="font-body font-light text-zinc-300 max-w-[600px] leading-relaxed mb-6 sm:mb-8"
-              style={{ fontSize: "clamp(0.95rem, 2vw, 1.5rem)" }}
+              className="font-body font-light text-zinc-300 max-w-[500px] leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg"
             >
               {slide.subtitle}
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3">
               <a
                 href="#orcamento"
                 onClick={(e) => {
