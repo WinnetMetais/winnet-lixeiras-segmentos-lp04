@@ -161,7 +161,7 @@ export const Hero = () => {
           <div
             className="winnet-text absolute z-10 text-white max-w-[700px] px-5 sm:px-8"
             style={{
-              bottom: "18%",
+              bottom: "22%",
               left: "6%",
               right: "15%",
               ...(index === 0
