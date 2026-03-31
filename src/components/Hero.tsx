@@ -27,7 +27,7 @@ const slidesData = [
     title: "ELEGÂNCIA",
     subtitle: "O acabamento impecável em aço inox que transforma qualquer superfície.",
     image: heroBancada,
-    objectPosition: "center 45%",
+    objectPosition: "center 30%",
   },
   {
     id: 3,
