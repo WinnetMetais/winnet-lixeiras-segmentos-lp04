@@ -174,11 +174,33 @@ export const Hero = () => {
               {slide.title}
             </h1>
             <p
-              className="font-body font-light text-zinc-300 max-w-[600px] leading-relaxed"
+              className="font-body font-light text-zinc-300 max-w-[600px] leading-relaxed mb-6 sm:mb-8"
               style={{ fontSize: "clamp(0.95rem, 2vw, 1.5rem)" }}
             >
               {slide.subtitle}
             </p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <a
+                href="#orcamento"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector("#orcamento")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="inline-flex items-center gap-2 bg-white text-black font-body font-semibold text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-white/90 transition-all duration-300 hover:scale-105"
+              >
+                <FileText className="w-4 h-4 sm:w-5 sm:h-5" />
+                Solicitar Orçamento
+              </a>
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-white/40 text-white font-body font-medium text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-lg backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105"
+              >
+                <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
+                WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       ))}
