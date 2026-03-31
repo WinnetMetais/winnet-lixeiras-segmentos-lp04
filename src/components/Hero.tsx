@@ -119,8 +119,7 @@ export const Hero = () => {
     <div
       ref={containerRef}
       className="relative w-screen overflow-hidden bg-[#050505]"
-      style={{ height: "110vh", minHeight: "700px" }}
-      style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
+      style={{ height: "110vh", minHeight: "700px", fontFamily: "'Inter', system-ui, sans-serif" }}
     >
       {slidesData.map((slide, index) => (
         <div
