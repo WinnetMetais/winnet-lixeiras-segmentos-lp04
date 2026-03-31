@@ -43,7 +43,7 @@ const slidesData = [
     title: "ALTO PADRÃO",
     subtitle: "A escolha certa para shoppings, galerias e ambientes corporativos de luxo.",
     image: heroCorporativo,
-    objectPosition: "center 55%",
+    objectPosition: "center 30%",
   },
 ];
 
