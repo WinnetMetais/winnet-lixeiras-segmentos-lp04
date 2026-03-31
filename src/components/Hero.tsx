@@ -1,70 +1,215 @@
-import { MessageCircle, ArrowRight } from "lucide-react";
-import ElegantCarousel from "@/components/ui/elegant-carousel";
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import coletaSeletivaImg from "@/assets/coleta-seletiva-conjunto.png";
-import lixeiraBasculanteImg from "@/assets/lixeira-basculante-lobby.png";
-import bituqueiraImg from "@/assets/bituqueira-hotel-externa.png";
-import ensacadorImg from "@/assets/ensacador-guarda-chuvas.png";
-import lixeiraRedondaImg from "@/assets/lixeira-redonda-lobby.png";
+import heroCozinha from "@/assets/hero-cozinha.jpeg";
+import heroBancada from "@/assets/hero-bancada.jpeg";
+import heroExterior from "@/assets/hero-exterior.png";
+import heroCorporativo from "@/assets/hero-corporativo.jpeg";
 
-const heroSlides = [
+gsap.registerPlugin(ScrollTrigger);
+
+const slidesData = [
   {
-    title: "Soluções Corporativas em Aço Inox",
-    subtitle: "Hotéis · Condomínios · Resorts",
-    description:
-      "Lixeiras e utilitários com acabamento premium, padronização visual e atendimento consultivo para ambientes corporativos de alto padrão.",
-    accent: "#3B7DD8",
-    imageUrl: coletaSeletivaImg,
+    id: 1,
+    tag: "COZINHA & ÁREAS GOURMET",
+    title: "PRATICIDADE",
+    subtitle: "Design inteligente em cada detalhe. O modelo de pedal que une higiene e estética.",
+    image: heroCozinha,
   },
   {
-    title: "Design que Eleva Ambientes",
-    subtitle: "Lobbies · Recepções · Áreas Comuns",
-    description:
-      "Soluções em inox que integram estética e funcionalidade, reforçando a imagem profissional dos seus espaços.",
-    accent: "#7A9E7E",
-    imageUrl: lixeiraBasculanteImg,
+    id: 2,
+    tag: "BANCADAS & BANHEIROS",
+    title: "ELEGÂNCIA",
+    subtitle: "O acabamento impecável em aço inox que transforma qualquer superfície.",
+    image: heroBancada,
   },
   {
-    title: "Resistência para Áreas Externas",
-    subtitle: "Resorts · Clubes · Entradas",
-    description:
-      "Produtos fabricados em aço inox AISI 430 e 304, projetados para resistir às intempéries sem perder a elegância.",
-    accent: "#C4956A",
-    imageUrl: bituqueiraImg,
+    id: 3,
+    tag: "EXTERIOR & VARANDAS",
+    title: "SOFISTICAÇÃO",
+    subtitle: "Resistência para durar e beleza para impressionar, mesmo em áreas abertas.",
+    image: heroExterior,
   },
   {
-    title: "Utilitários Corporativos Premium",
-    subtitle: "Ensacadores · Porta Guarda-Chuvas",
-    description:
-      "Complementos que valorizam a recepção e entrada dos seus ambientes com funcionalidade e sofisticação.",
-    accent: "#8BA7B8",
-    imageUrl: ensacadorImg,
-  },
-  {
-    title: "Padronização & Identidade Visual",
-    subtitle: "Empresas · Hospitais · Instituições",
-    description:
-      "Crie uma identidade visual consistente em todos os andares e espaços do seu empreendimento com nossas linhas de produtos.",
-    accent: "#D4A955",
-    imageUrl: lixeiraRedondaImg,
+    id: 4,
+    tag: "ESPAÇOS CORPORATIVOS",
+    title: "ALTO PADRÃO",
+    subtitle: "A escolha certa para shoppings, galerias e ambientes corporativos de luxo.",
+    image: heroCorporativo,
   },
 ];
 
 export const Hero = () => {
-  const whatsappLink =
-    "https://wa.me/5511959105205?text=Olá!%20Vim%20através%20do%20site%20e%20gostaria%20de%20solicitar%20um%20orçamento%20corporativo.";
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const ctx = gsap.context(() => {
+      const slides = gsap.utils.toArray<HTMLElement>(".winnet-slide");
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          pin: true,
+          scrub: 1,
+          start: "top top",
+          end: `+=${slides.length * 100}%`,
+          onUpdate: (self) => {
+            const progress = self.progress;
+            const current = Math.min(
+              Math.floor(progress * slides.length),
+              slides.length - 1
+            );
+            setActiveSlide(current);
+          },
+        },
+      });
+
+      // Ken Burns effect
+      slides.forEach((slide) => {
+        const img = slide.querySelector(".winnet-img-container");
+        if (img) {
+          gsap.to(img, {
+            scale: 1.0,
+            duration: 20,
+            ease: "none",
+            repeat: -1,
+            yoyo: true,
+          });
+        }
+      });
+
+      // Curtain transition
+      slides.forEach((slide, i) => {
+        if (i === 0) return;
+
+        const imageContainer = slide.querySelector(".winnet-img-container");
+        const textContent = slide.querySelector(".winnet-text");
+
+        if (textContent) gsap.set(textContent, { y: 50, opacity: 0 });
+
+        tl.to(slide, {
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+          ease: "none",
+          duration: 1,
+        })
+          .to(
+            imageContainer,
+            { y: "0%", scale: 1.05, duration: 1, ease: "none" },
+            "<"
+          )
+          .to(
+            textContent,
+            { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" },
+            "-=0.3"
+          );
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section className="relative bg-primary pt-16 lg:pt-20">
-      <ElegantCarousel
-        slides={heroSlides}
-        ctaLabel="Solicitar Orçamento Corporativo"
-        onCtaClick={() => window.open(whatsappLink, "_blank")}
-        secondaryCtaLabel="Falar com Especialista"
-        onSecondaryCtaClick={() =>
-          document.getElementById("orcamento")?.scrollIntoView({ behavior: "smooth" })
+    <div
+      ref={containerRef}
+      className="relative w-screen h-screen overflow-hidden bg-[#050505]"
+      style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
+    >
+      {slidesData.map((slide, index) => (
+        <div
+          key={slide.id}
+          className="winnet-slide absolute inset-0 overflow-hidden"
+          style={{
+            zIndex: index + 1,
+            ...(index !== 0
+              ? { clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)" }
+              : {}),
+          }}
+        >
+          <div
+            className="winnet-img-container absolute inset-0"
+            style={{
+              transform:
+                index === 0 ? "scale(1.05)" : "scale(1.1) translateY(20%)",
+            }}
+          >
+            <img
+              src={slide.image}
+              alt={`Winnet - ${slide.title}`}
+              className="w-full h-full object-cover object-center"
+            />
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%)",
+              }}
+            />
+          </div>
+
+          <div
+            className="winnet-text absolute z-10 text-white max-w-[800px] px-6 sm:px-0"
+            style={{
+              bottom: "12%",
+              left: "8%",
+              ...(index === 0
+                ? { opacity: 1, transform: "translateY(0)" }
+                : { opacity: 0, transform: "translateY(50px)" }),
+            }}
+          >
+            <div className="inline-block text-[0.7rem] sm:text-xs tracking-[0.3em] uppercase mb-3 sm:mb-4 px-3 sm:px-4 py-1.5 border border-white/30 rounded-full backdrop-blur-sm">
+              {slide.tag}
+            </div>
+            <h1
+              className="font-display font-light leading-[1.1] tracking-[-0.02em] mb-3 sm:mb-4"
+              style={{ fontSize: "clamp(2.5rem, 6vw, 6rem)" }}
+            >
+              {slide.title}
+            </h1>
+            <p
+              className="font-body font-light text-zinc-300 max-w-[600px] leading-relaxed"
+              style={{ fontSize: "clamp(0.95rem, 2vw, 1.5rem)" }}
+            >
+              {slide.subtitle}
+            </p>
+          </div>
+        </div>
+      ))}
+
+      {/* Dots */}
+      <div className="absolute right-[5%] top-1/2 -translate-y-1/2 flex flex-col items-center gap-3 sm:gap-4 z-20">
+        {slidesData.map((_, index) => (
+          <div
+            key={index}
+            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+              activeSlide === index
+                ? "bg-white scale-150 shadow-[0_0_10px_rgba(255,255,255,0.5)]"
+                : "bg-white/30"
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2.5 text-white text-[0.7rem] sm:text-xs tracking-[0.2em] opacity-70 z-20">
+        <div className="w-5 h-8 sm:w-6 sm:h-9 border border-white rounded-xl relative">
+          <div
+            className="w-1 h-1.5 bg-white rounded-full absolute left-1/2 -translate-x-1/2"
+            style={{ animation: "scrollWheel 2s infinite", top: "6px" }}
+          />
+        </div>
+        <span>ROLE PARA EXPLORAR</span>
+      </div>
+
+      <style>{`
+        @keyframes scrollWheel {
+          0% { top: 6px; opacity: 1; }
+          100% { top: 20px; opacity: 0; }
         }
-      />
-    </section>
+      `}</style>
+    </div>
   );
 };
