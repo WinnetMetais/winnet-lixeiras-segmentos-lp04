@@ -3,10 +3,10 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MessageCircle, FileText } from "lucide-react";
 
-import heroCozinha from "@/assets/hero-cozinha.jpeg";
-import heroBancada from "@/assets/hero-bancada.jpeg";
+import heroCozinha from "@/assets/hero-cozinha.png";
+import heroBancada from "@/assets/hero-bancada.png";
 import heroExterior from "@/assets/hero-exterior.png";
-import heroCorporativo from "@/assets/hero-corporativo.jpeg";
+import heroCorporativo from "@/assets/hero-corporativo.png";
 
 const whatsappLink = "https://wa.me/5511959105205?text=Olá!%20Vim%20através%20do%20site%20e%20gostaria%20de%20mais%20informações.";
 
@@ -19,6 +19,7 @@ const slidesData = [
     title: "PRATICIDADE",
     subtitle: "Design inteligente em cada detalhe. O modelo de pedal que une higiene e estética.",
     image: heroCozinha,
+    objectPosition: "center 60%",
   },
   {
     id: 2,
@@ -26,6 +27,7 @@ const slidesData = [
     title: "ELEGÂNCIA",
     subtitle: "O acabamento impecável em aço inox que transforma qualquer superfície.",
     image: heroBancada,
+    objectPosition: "center 45%",
   },
   {
     id: 3,
@@ -33,6 +35,7 @@ const slidesData = [
     title: "SOFISTICAÇÃO",
     subtitle: "Resistência para durar e beleza para impressionar, mesmo em áreas abertas.",
     image: heroExterior,
+    objectPosition: "center 50%",
   },
   {
     id: 4,
@@ -40,6 +43,7 @@ const slidesData = [
     title: "ALTO PADRÃO",
     subtitle: "A escolha certa para shoppings, galerias e ambientes corporativos de luxo.",
     image: heroCorporativo,
+    objectPosition: "center 55%",
   },
 ];
 
@@ -143,7 +147,7 @@ export const Hero = () => {
               src={slide.image}
               alt={`Winnet - ${slide.title}`}
               className="w-full h-full object-cover"
-              style={{ objectPosition: "center 40%" }}
+              style={{ objectPosition: slide.objectPosition }}
             />
             <div
               className="absolute inset-0 pointer-events-none"
