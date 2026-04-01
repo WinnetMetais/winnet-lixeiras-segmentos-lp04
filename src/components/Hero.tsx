@@ -19,7 +19,7 @@ const slidesData = [
     title: "PRATICIDADE",
     subtitle: "Design inteligente em cada detalhe. O modelo de pedal que une higiene e estética.",
     image: heroCozinha,
-    objectPosition: "center 35%",
+    objectPosition: "center 25%",
   },
   {
     id: 2,
