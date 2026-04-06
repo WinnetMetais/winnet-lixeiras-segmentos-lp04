@@ -31,11 +31,7 @@ export const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-        scrolled
-          ? "bg-background/95 backdrop-blur-md shadow-sm border-b border-border/50"
-          : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-[100] transition-all duration-500 bg-transparent"
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
@@ -47,9 +43,7 @@ export const Navbar = () => {
             <img
               src={logoWinnet}
               alt="Winnet Metais"
-              className={`h-9 lg:h-10 w-auto transition-all duration-300 ${
-                scrolled ? "" : "brightness-0 invert"
-              }`}
+              className="h-9 lg:h-10 w-auto transition-all duration-300 brightness-0 invert"
             />
           </button>
 
@@ -59,11 +53,7 @@ export const Navbar = () => {
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className={`px-4 py-2 text-sm font-body font-medium rounded-lg transition-all duration-300 hover:bg-accent/10 ${
-                  scrolled
-                    ? "text-muted-foreground hover:text-foreground"
-                    : "text-primary-foreground/80 hover:text-primary-foreground"
-                }`}
+                className="px-4 py-2 text-sm font-body font-medium rounded-lg transition-all duration-300 hover:bg-white/10 text-primary-foreground/80 hover:text-primary-foreground"
               >
                 {link.label}
               </button>
@@ -85,9 +75,7 @@ export const Navbar = () => {
           {/* Mobile Toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`lg:hidden p-2 rounded-lg transition-colors ${
-              scrolled ? "text-foreground" : "text-primary-foreground"
-            }`}
+            className="lg:hidden p-2 rounded-lg transition-colors text-primary-foreground"
             aria-label="Menu"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
