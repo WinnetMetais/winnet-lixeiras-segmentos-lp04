@@ -149,7 +149,7 @@ export const Hero = () => {
             <img
               src={slide.image}
               alt={`Winnet - ${slide.title}`}
-              className="w-full h-full object-cover max-w-full"
+              className={`w-full h-full object-cover max-w-full hero-slide-img hero-slide-img-${index}`}
               style={{ objectPosition: slide.objectPosition }}
             />
             <div
@@ -241,6 +241,12 @@ export const Hero = () => {
         @keyframes scrollWheel {
           0% { top: 5px; opacity: 1; }
           100% { top: 18px; opacity: 0; }
+        }
+        @media (max-width: 640px) {
+          .hero-slide-img-0 { object-position: center 30% !important; }
+          .hero-slide-img-1 { object-position: center 30% !important; }
+          .hero-slide-img-2 { object-position: center 30% !important; }
+          .hero-slide-img-3 { object-position: center 30% !important; }
         }
       `}</style>
     </div>
