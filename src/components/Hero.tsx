@@ -75,17 +75,20 @@ export const Hero = () => {
         },
       });
 
-      // Ken Burns effect
+      // Ken Burns effect — zoom out
       slides.forEach((slide) => {
         const img = slide.querySelector(".winnet-img-container");
         if (img) {
-          gsap.to(img, {
-            scale: 1.0,
-            duration: 20,
-            ease: "none",
-            repeat: -1,
-            yoyo: true,
-          });
+          gsap.fromTo(img, 
+            { scale: 1.15 },
+            {
+              scale: 1.0,
+              duration: 20,
+              ease: "none",
+              repeat: -1,
+              yoyo: true,
+            }
+          );
         }
       });
 
