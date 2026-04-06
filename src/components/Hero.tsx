@@ -122,8 +122,8 @@ export const Hero = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-screen overflow-hidden bg-[#050505]"
-      style={{ height: "110vh", minHeight: "700px", fontFamily: "'Inter', system-ui, sans-serif" }}
+      className="relative w-screen overflow-x-hidden bg-[#050505]"
+      style={{ height: "100vh", minHeight: "600px", maxHeight: "100vh", fontFamily: "'Inter', system-ui, sans-serif" }}
     >
       {slidesData.map((slide, index) => (
         <div
@@ -137,7 +137,7 @@ export const Hero = () => {
           }}
         >
           <div
-            className="winnet-img-container absolute inset-0"
+            className="winnet-img-container absolute inset-0 max-w-full"
             style={{
               transform:
                 index === 0 ? "scale(1.05)" : "scale(1.1) translateY(20%)",
@@ -146,51 +146,54 @@ export const Hero = () => {
             <img
               src={slide.image}
               alt={`Winnet - ${slide.title}`}
-              className="w-full h-full object-cover py-0 my-0 pt-0 mt-0 mb-0"
-              style={{ objectPosition: slide.objectPosition }}
+              className="w-full h-full object-cover max-w-full"
+              style={{ 
+                objectPosition: slide.objectPosition,
+                maxHeight: "80vh",
+              }}
             />
             <div
               className="absolute inset-0 pointer-events-none"
               style={{
                 background:
-                  "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%)",
+                  "linear-gradient(to top, rgba(5,5,5,0.9) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.15) 100%)",
               }}
             />
           </div>
 
           <div
-            className="winnet-text absolute z-10 text-white max-w-[700px] px-5 sm:px-8"
+            className="winnet-text absolute z-10 text-white max-w-[700px] px-4 sm:px-8"
             style={{
-              bottom: "22%",
-              left: "6%",
+              bottom: "clamp(12%, 18vw, 22%)",
+              left: "5%",
               right: "15%",
               ...(index === 0
                 ? { opacity: 1, transform: "translateY(0)" }
                 : { opacity: 0, transform: "translateY(50px)" }),
             }}
           >
-            <div className="inline-block text-[0.65rem] sm:text-xs tracking-[0.3em] uppercase mb-2 sm:mb-3 px-3 sm:px-4 py-1 sm:py-1.5 border border-white/30 rounded-full backdrop-blur-sm">
+            <div className="inline-block text-[0.6rem] sm:text-xs tracking-[0.3em] uppercase mb-2 sm:mb-3 px-3 sm:px-4 py-1 sm:py-1.5 border border-white/30 rounded-full backdrop-blur-sm">
               {slide.tag}
             </div>
             <h1
               className="font-display font-light leading-[1.05] tracking-[-0.02em] mb-2 sm:mb-3"
-              style={{ fontSize: "clamp(2rem, 5vw, 5rem)" }}
+              style={{ fontSize: "clamp(1.8rem, 5vw, 5rem)" }}
             >
               {slide.title}
             </h1>
             <p
-              className="font-body font-light text-zinc-300 max-w-[500px] leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg"
+              className="font-body font-light text-zinc-300 max-w-[500px] leading-relaxed mb-3 sm:mb-6 text-xs sm:text-base lg:text-lg"
             >
               {slide.subtitle}
             </p>
-            <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
               <a
                 href="#orcamento"
                 onClick={(e) => {
                   e.preventDefault();
                   document.querySelector("#orcamento")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="inline-flex items-center gap-2 bg-white text-black font-body font-semibold text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-white/90 transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 bg-white text-black font-body font-semibold text-xs sm:text-base px-5 sm:px-8 py-2.5 sm:py-4 rounded-lg hover:bg-white/90 transition-all duration-300 hover:scale-105"
               >
                 <FileText className="w-4 h-4 sm:w-5 sm:h-5" />
                 Solicitar Orçamento
@@ -199,7 +202,7 @@ export const Hero = () => {
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-white/40 text-white font-body font-medium text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-lg backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 border border-white/40 text-white font-body font-medium text-xs sm:text-base px-5 sm:px-8 py-2.5 sm:py-4 rounded-lg backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105"
               >
                 <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                 WhatsApp
@@ -210,7 +213,7 @@ export const Hero = () => {
       ))}
 
       {/* Dots */}
-      <div className="absolute right-[5%] top-1/2 -translate-y-1/2 flex flex-col items-center gap-3 sm:gap-4 z-20">
+      <div className="absolute right-[4%] top-1/2 -translate-y-1/2 flex flex-col items-center gap-3 sm:gap-4 z-20">
         {slidesData.map((_, index) => (
           <div
             key={index}
@@ -224,11 +227,11 @@ export const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white text-[0.65rem] sm:text-xs tracking-[0.2em] opacity-60 z-20">
-        <div className="w-5 h-8 sm:w-6 sm:h-9 border border-white rounded-xl relative">
+      <div className="absolute bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-white text-[0.6rem] sm:text-xs tracking-[0.2em] opacity-60 z-20">
+        <div className="w-5 h-7 sm:w-6 sm:h-9 border border-white rounded-xl relative">
           <div
             className="w-1 h-1.5 bg-white rounded-full absolute left-1/2 -translate-x-1/2"
-            style={{ animation: "scrollWheel 2s infinite", top: "6px" }}
+            style={{ animation: "scrollWheel 2s infinite", top: "5px" }}
           />
         </div>
         <span>ROLE PARA EXPLORAR</span>
@@ -236,8 +239,8 @@ export const Hero = () => {
 
       <style>{`
         @keyframes scrollWheel {
-          0% { top: 6px; opacity: 1; }
-          100% { top: 20px; opacity: 0; }
+          0% { top: 5px; opacity: 1; }
+          100% { top: 18px; opacity: 0; }
         }
       `}</style>
     </div>
