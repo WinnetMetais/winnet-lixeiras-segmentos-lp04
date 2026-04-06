@@ -53,11 +53,7 @@ export const Navbar = () => {
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className={`px-4 py-2 text-sm font-body font-medium rounded-lg transition-all duration-300 hover:bg-accent/10 ${
-                  scrolled
-                    ? "text-muted-foreground hover:text-foreground"
-                    : "text-primary-foreground/80 hover:text-primary-foreground"
-                }`}
+                className="px-4 py-2 text-sm font-body font-medium rounded-lg transition-all duration-300 hover:bg-white/10 text-primary-foreground/80 hover:text-primary-foreground"
               >
                 {link.label}
               </button>
