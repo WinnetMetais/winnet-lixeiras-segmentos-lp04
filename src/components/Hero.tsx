@@ -19,7 +19,7 @@ const slidesData = [
     title: "PRATICIDADE",
     subtitle: "Design inteligente em cada detalhe. O modelo de pedal que une higiene e estética.",
     image: heroCozinha,
-    objectPosition: "center 15%",
+    objectPosition: "center center",
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const slidesData = [
     title: "ELEGÂNCIA",
     subtitle: "O acabamento impecável em aço inox que transforma qualquer superfície.",
     image: heroBancada,
-    objectPosition: "center 10%",
+    objectPosition: "center center",
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const slidesData = [
     title: "SOFISTICAÇÃO",
     subtitle: "Resistência para durar e beleza para impressionar, mesmo em áreas abertas.",
     image: heroExterior,
-    objectPosition: "center 15%",
+    objectPosition: "center center",
   },
   {
     id: 4,
@@ -43,7 +43,7 @@ const slidesData = [
     title: "ALTO PADRÃO",
     subtitle: "A escolha certa para shoppings, galerias e ambientes corporativos de luxo.",
     image: heroCorporativo,
-    objectPosition: "center 10%",
+    objectPosition: "center center",
   },
 ];
 
@@ -126,7 +126,7 @@ export const Hero = () => {
     <div
       ref={containerRef}
       className="relative w-screen overflow-x-hidden bg-[#050505]"
-      style={{ height: "100vh", minHeight: "600px", maxHeight: "100vh", fontFamily: "'Inter', system-ui, sans-serif" }}
+      style={{ height: "100vh", minHeight: "600px", fontFamily: "'Inter', system-ui, sans-serif" }}
     >
       {slidesData.map((slide, index) => (
         <div
@@ -150,10 +150,7 @@ export const Hero = () => {
               src={slide.image}
               alt={`Winnet - ${slide.title}`}
               className="w-full h-full object-cover max-w-full"
-              style={{ 
-                objectPosition: slide.objectPosition,
-                maxHeight: "80vh",
-              }}
+              style={{ objectPosition: slide.objectPosition }}
             />
             <div
               className="absolute inset-0 pointer-events-none"
