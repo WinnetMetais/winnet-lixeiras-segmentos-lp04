@@ -75,9 +75,7 @@ export const Navbar = () => {
           {/* Mobile Toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`lg:hidden p-2 rounded-lg transition-colors ${
-              scrolled ? "text-foreground" : "text-primary-foreground"
-            }`}
+            className="lg:hidden p-2 rounded-lg transition-colors text-primary-foreground"
             aria-label="Menu"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
