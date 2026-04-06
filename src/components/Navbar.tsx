@@ -43,9 +43,7 @@ export const Navbar = () => {
             <img
               src={logoWinnet}
               alt="Winnet Metais"
-              className={`h-9 lg:h-10 w-auto transition-all duration-300 ${
-                scrolled ? "" : "brightness-0 invert"
-              }`}
+              className="h-9 lg:h-10 w-auto transition-all duration-300 brightness-0 invert"
             />
           </button>
 
