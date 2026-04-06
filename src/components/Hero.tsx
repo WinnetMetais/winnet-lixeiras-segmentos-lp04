@@ -242,6 +242,12 @@ export const Hero = () => {
           0% { top: 5px; opacity: 1; }
           100% { top: 18px; opacity: 0; }
         }
+        @media (max-width: 640px) {
+          .hero-slide-img-0 { object-position: center 30% !important; }
+          .hero-slide-img-1 { object-position: center 30% !important; }
+          .hero-slide-img-2 { object-position: center 30% !important; }
+          .hero-slide-img-3 { object-position: center 30% !important; }
+        }
       `}</style>
     </div>
   );
