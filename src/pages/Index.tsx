@@ -31,6 +31,7 @@ const Index = () => {
       <Solutions />
       <Differentials />
       <ProofVisual />
+      <Testimonials />
       <ProcessSteps />
       <ConversionForm />
       <FinalCTA />
