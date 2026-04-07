@@ -7,6 +7,7 @@ import { Segments } from "@/components/Segments";
 import { Solutions } from "@/components/Solutions";
 import { Differentials } from "@/components/Differentials";
 import { ProofVisual } from "@/components/ProofVisual";
+import { Testimonials } from "@/components/Testimonials";
 import { ProcessSteps } from "@/components/ProcessSteps";
 import { ConversionForm } from "@/components/ConversionForm";
 import { FinalCTA } from "@/components/FinalCTA";
