@@ -1,17 +1,19 @@
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "@/hooks/useGsap";
 import { Hotel, Building2, Palmtree, HeartPulse, Briefcase, Landmark } from "lucide-react";
-import coletaSeletivaImg from "@/assets/coleta-seletiva-conjunto.png";
-import lixeiraBasculanteImg from "@/assets/lixeira-basculante-lobby.png";
-import bituqueiraImg from "@/assets/bituqueira-hotel-externa.png";
-import lixeiraPedalImg from "@/assets/lixeira-pedal-banheiro.png";
-import lixeiraRedondaImg from "@/assets/lixeira-redonda-lobby.png";
-import ensacadorImg from "@/assets/ensacador-guarda-chuvas.png";
+import { motion, AnimatePresence } from "framer-motion";
+
+import lixeiraAroImg from "@/assets/lixeira-aro-redonda-grande-porte-100l.png";
+import coletaSeletivaImg from "@/assets/lixeira-pedal-redonda-coleta-seletiva-grande-porte.png";
+import bituqueiraImg from "@/assets/bituqueira-space-fixa.jpeg";
+import lixeiraTampaImg from "@/assets/lixeira-com-tampa-pequena.jpeg";
+import lixeiraPedalImg from "@/assets/lixeira-pedal-e-alca-grande-porte-60l.png";
+import ensacadorImg from "@/assets/ensacador-guarda-chuvas-new.png";
 
 const segments = [
   {
     id: "hoteis", icon: Hotel, label: "Hotéis",
-    title: "Hotéis & Pousadas", image: lixeiraBasculanteImg,
+    title: "Hotéis & Pousadas", image: lixeiraAroImg,
     description: "Eleve a experiência dos hóspedes com soluções que refletem o padrão do seu estabelecimento. Durabilidade em áreas de alto tráfego, design que valoriza cada ambiente.",
     highlights: ["Lobbies e recepções", "Banheiros e suítes", "Áreas de serviço", "Entradas e corredores"],
   },
@@ -29,13 +31,13 @@ const segments = [
   },
   {
     id: "hospitais", icon: HeartPulse, label: "Hospitais",
-    title: "Hospitais & Clínicas", image: lixeiraPedalImg,
+    title: "Hospitais & Clínicas", image: lixeiraTampaImg,
     description: "Higiene e resistência para ambientes que exigem máxima assepsia. Soluções com acionamento higiênico e fácil limpeza profunda.",
     highlights: ["Quartos e enfermarias", "Recepções", "Áreas de espera", "Centros cirúrgicos"],
   },
   {
     id: "empresas", icon: Briefcase, label: "Empresas",
-    title: "Empresas & Escritórios", image: lixeiraRedondaImg,
+    title: "Empresas & Escritórios", image: lixeiraPedalImg,
     description: "Imagem corporativa elevada com soluções discretas e funcionais. Padronização que reforça a identidade visual do ambiente de trabalho.",
     highlights: ["Recepções corporativas", "Copas e refeitórios", "Andares e corredores", "Áreas comuns"],
   },
@@ -50,8 +52,6 @@ const segments = [
 export const Segments = () => {
   const [active, setActive] = useState(0);
   const ref = useRef<HTMLElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -60,18 +60,6 @@ export const Segments = () => {
     }, ref);
     return () => ctx.revert();
   }, []);
-
-  useEffect(() => {
-    // Animate image change
-    if (imageRef.current) {
-      gsap.fromTo(imageRef.current, { opacity: 0, scale: 1.05, rotateY: 3 }, { opacity: 1, scale: 1, rotateY: 0, duration: 0.7, ease: "power3.out" });
-    }
-    // Animate content change
-    if (contentRef.current) {
-      const children = contentRef.current.children;
-      gsap.fromTo(children, { y: 20, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.06, duration: 0.5, ease: "power3.out" });
-    }
-  }, [active]);
 
   const current = segments[active];
 
@@ -97,9 +85,11 @@ export const Segments = () => {
           {segments.map((seg, i) => {
             const Icon = seg.icon;
             return (
-              <button
+              <motion.button
                 key={seg.id}
                 onClick={() => setActive(i)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
                 className={`relative flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-body font-medium transition-all duration-400 overflow-hidden ${
                   active === i
                     ? "bg-accent text-accent-foreground shadow-lg shadow-accent/20"
@@ -109,41 +99,67 @@ export const Segments = () => {
                 <Icon className={`w-4 h-4 transition-transform duration-300 ${active === i ? "scale-110" : ""}`} />
                 {seg.label}
                 {active === i && (
-                  <span className="absolute inset-0 bg-accent inox-shine pointer-events-none" />
+                  <motion.span
+                    layoutId="seg-active"
+                    className="absolute inset-0 bg-accent rounded-xl -z-10"
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  />
                 )}
-              </button>
+              </motion.button>
             );
           })}
         </div>
 
         {/* Content */}
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] group">
-            <img
-              ref={imageRef}
-              src={current.image}
-              alt={current.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-primary/10 to-transparent" />
-            {/* Floating label */}
-            <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-md">
-              <p className="text-xs font-body font-semibold text-accent uppercase tracking-wider">{current.label}</p>
-            </div>
-          </div>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current.id}
+              initial={{ opacity: 0, scale: 1.05, rotateY: 3 }}
+              animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] group"
+            >
+              <img
+                src={current.image}
+                alt={current.title}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-primary/10 to-transparent" />
+              <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-md">
+                <p className="text-xs font-body font-semibold text-accent uppercase tracking-wider">{current.label}</p>
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
-          <div ref={contentRef} className="space-y-6">
-            <h3 className="text-2xl lg:text-4xl text-foreground">{current.title}</h3>
-            <p className="text-muted-foreground font-body leading-relaxed text-lg">{current.description}</p>
-            <div className="grid grid-cols-2 gap-3 pt-2">
-              {current.highlights.map((h, i) => (
-                <div key={i} className="flex items-center gap-2 text-sm font-body text-foreground group/h cursor-default">
-                  <span className="w-2 h-2 bg-accent rounded-full flex-shrink-0 group-hover/h:scale-150 transition-transform duration-300" />
-                  {h}
-                </div>
-              ))}
-            </div>
-          </div>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current.id + "-content"}
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="space-y-6"
+            >
+              <h3 className="text-2xl lg:text-4xl text-foreground">{current.title}</h3>
+              <p className="text-muted-foreground font-body leading-relaxed text-lg">{current.description}</p>
+              <div className="grid grid-cols-2 gap-3 pt-2">
+                {current.highlights.map((h, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.08, duration: 0.4 }}
+                    className="flex items-center gap-2 text-sm font-body text-foreground group/h cursor-default"
+                  >
+                    <span className="w-2 h-2 bg-accent rounded-full flex-shrink-0 group-hover/h:scale-150 transition-transform duration-300" />
+                    {h}
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>
