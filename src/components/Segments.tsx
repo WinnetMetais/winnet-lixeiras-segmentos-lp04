@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import lixeiraAroImg from "@/assets/lixeira-aro-redonda-grande-porte-100l.png";
 import coletaSeletivaImg from "@/assets/lixeira-pedal-redonda-coleta-seletiva-grande-porte.png";
-import bituqueiraImg from "@/assets/bituqueira-space-fixa.jpeg";
-import lixeiraTampaImg from "@/assets/lixeira-com-tampa-pequena.jpeg";
+import pedalAlcaResortImg from "@/assets/pedal-alca-grande-100l-resort.png";
+import pedalAlcaRodizioHospitalImg from "@/assets/pedal-alca-rodizio-hospital.png";
 import lixeiraPedalImg from "@/assets/lixeira-pedal-e-alca-grande-porte-60l.png";
 import ensacadorImg from "@/assets/ensacador-guarda-chuvas-new.png";
 
@@ -16,36 +16,42 @@ const segments = [
     title: "Hotéis & Pousadas", image: lixeiraAroImg,
     description: "Eleve a experiência dos hóspedes com soluções que refletem o padrão do seu estabelecimento. Durabilidade em áreas de alto tráfego, design que valoriza cada ambiente.",
     highlights: ["Lobbies e recepções", "Banheiros e suítes", "Áreas de serviço", "Entradas e corredores"],
+    objectPosition: "center 30%",
   },
   {
     id: "condominios", icon: Building2, label: "Condomínios",
-    title: "Condomínios Residenciais", image: coletaSeletivaImg,
-    description: "Padronização visual e resistência que agregam valor ao empreendimento. Soluções duráveis que reduzem custos de manutenção e elevam a satisfação dos moradores.",
-    highlights: ["Áreas comuns", "Coleta seletiva", "Hall de entrada", "Áreas de lazer"],
+    title: "Condomínios Residenciais", image: ensacadorImg,
+    description: "Praticidade e organização para áreas comuns com soluções que agregam valor ao empreendimento. Ensacadores e porta guarda-chuvas que elevam a experiência dos moradores.",
+    highlights: ["Hall de entrada", "Recepção", "Áreas comuns", "Espaços de convivência"],
+    objectPosition: "center center",
   },
   {
     id: "resorts", icon: Palmtree, label: "Resorts",
-    title: "Resorts & Clubes", image: bituqueiraImg,
-    description: "Resistência ao clima litorâneo com acabamento premium. Produtos que mantêm a estética impecável mesmo em áreas externas e de alto fluxo.",
-    highlights: ["Áreas externas", "Piscinas e deck", "Restaurantes", "Spa e wellness"],
+    title: "Resorts & Clubes", image: pedalAlcaResortImg,
+    description: "Resistência ao clima litorâneo com acabamento premium. Lixeiras com pedal e alça que mantêm a estética impecável em áreas externas, piscinas e espaços gourmet.",
+    highlights: ["Áreas externas", "Piscinas e deck", "Espaços gourmet", "Spa e wellness"],
+    objectPosition: "center 60%",
   },
   {
     id: "hospitais", icon: HeartPulse, label: "Hospitais",
-    title: "Hospitais & Clínicas", image: lixeiraTampaImg,
-    description: "Higiene e resistência para ambientes que exigem máxima assepsia. Soluções com acionamento higiênico e fácil limpeza profunda.",
-    highlights: ["Quartos e enfermarias", "Recepções", "Áreas de espera", "Centros cirúrgicos"],
+    title: "Hospitais & Clínicas", image: pedalAlcaRodizioHospitalImg,
+    description: "Higiene e mobilidade para ambientes que exigem máxima assepsia. Lixeiras com pedal, alça e rodízio para fácil transporte e acionamento higiênico sem contato.",
+    highlights: ["Quartos e enfermarias", "Centros cirúrgicos", "Laboratórios", "Áreas de espera"],
+    objectPosition: "center 50%",
   },
   {
     id: "empresas", icon: Briefcase, label: "Empresas",
     title: "Empresas & Escritórios", image: lixeiraPedalImg,
     description: "Imagem corporativa elevada com soluções discretas e funcionais. Padronização que reforça a identidade visual do ambiente de trabalho.",
     highlights: ["Recepções corporativas", "Copas e refeitórios", "Andares e corredores", "Áreas comuns"],
+    objectPosition: "center 20%",
   },
   {
     id: "instituicoes", icon: Landmark, label: "Instituições",
-    title: "Instituições & Espaços Públicos", image: ensacadorImg,
-    description: "Robustez e praticidade para ambientes de grande fluxo. Soluções que combinam resistência com apresentação adequada ao espaço.",
-    highlights: ["Universidades", "Centros culturais", "Espaços de eventos", "Áreas de circulação"],
+    title: "Instituições & Espaços Públicos", image: coletaSeletivaImg,
+    description: "Organização e conformidade ambiental para ambientes de grande fluxo. Coleta seletiva com identificação por cores que facilita a separação correta dos resíduos.",
+    highlights: ["Universidades", "Centros culturais", "Refeitórios", "Áreas de circulação"],
+    objectPosition: "center 30%",
   },
 ];
 
@@ -125,6 +131,7 @@ export const Segments = () => {
                 src={current.image}
                 alt={current.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                style={{ objectPosition: current.objectPosition || "center center" }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-primary/10 to-transparent" />
               <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-md">
