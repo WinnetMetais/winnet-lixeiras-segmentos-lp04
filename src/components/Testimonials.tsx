@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from "framer-motion";
+import { MessageCircle, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const testimonials = [
   {
@@ -171,6 +173,26 @@ export const Testimonials = () => {
           <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={25} />
           <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={22} />
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-center mt-14"
+        >
+          <p className="text-muted-foreground font-body mb-5">Junte-se aos nossos clientes satisfeitos</p>
+          <Button
+            size="lg"
+            className="bg-accent hover:bg-accent/90 text-accent-foreground font-body font-semibold text-base px-8 py-6 rounded-xl shadow-lg shadow-accent/20 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 group"
+            onClick={() => window.open("https://wa.me/5511959105205?text=Olá!%20Vi%20as%20avaliações%20e%20gostaria%20de%20solicitar%20um%20orçamento.", "_blank")}
+          >
+            <MessageCircle className="w-5 h-5 mr-1" />
+            Solicitar Orçamento
+            <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </motion.div>
       </motion.div>
     </section>
   );
