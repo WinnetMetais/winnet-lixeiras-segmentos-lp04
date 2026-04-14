@@ -93,17 +93,36 @@ export const Solutions = () => {
           ))}
         </div>
 
-        <div className="text-center mt-14">
-          <Button
-            size="lg"
-            className="bg-accent hover:bg-accent/90 text-accent-foreground font-body font-semibold px-10 py-6 rounded-xl shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 transition-all duration-300 hover:-translate-y-0.5 group"
-            onClick={() => window.open(whatsappLink, "_blank")}
-          >
-            <MessageCircle className="w-5 h-5 mr-2" />
-            Ver Catálogo Completo
-            <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </div>
+        {/* Card 300+ modelos */}
+        <motion.div
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-3xl mx-auto mt-14 bg-gradient-to-br from-primary to-primary/90 rounded-2xl p-8 lg:p-12 text-center relative overflow-hidden shadow-2xl"
+        >
+          <div className="absolute inset-0 inox-shine pointer-events-none opacity-15" />
+          <div className="relative space-y-4">
+            <p className="text-5xl lg:text-6xl font-display font-bold text-accent">+300</p>
+            <h3 className="text-xl lg:text-2xl font-display font-bold text-primary-foreground">
+              Modelos disponíveis no nosso catálogo
+            </h3>
+            <p className="text-primary-foreground/80 font-body max-w-lg mx-auto">
+              Esses são apenas alguns dos nossos produtos. Fale com nossa especialista e descubra a solução ideal para o seu projeto.
+            </p>
+            <div className="pt-4">
+              <Button
+                size="lg"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground font-body font-semibold px-10 py-6 rounded-xl shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 transition-all duration-300 hover:-translate-y-0.5 group"
+                onClick={() => window.open("https://wa.me/5511978791851?text=Olá!%20Quero%20conhecer%20o%20catálogo%20completo%20com%20mais%20de%20300%20modelos!", "_blank")}
+              >
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Falar com Especialista
+                <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
