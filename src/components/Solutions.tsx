@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 import lixeiraAroImg from "@/assets/lixeira-aro-redonda-grande-porte-100l.png";
-import coletaSeletivaImg from "@/assets/lixeira-pedal-redonda-coleta-seletiva-grande-porte.png";
+import coletaSeletivaImg from "@/assets/coleta-seletiva-aro-5cores.png";
 import lixeiraPedalImg from "@/assets/lixeira-pedal-redonda-75l.png";
 import lixeiraTampaImg from "@/assets/lixeira-com-tampa-pequena.jpeg";
-import bituqueiraImg from "@/assets/bituqueira-space-fixa.jpeg";
+import bituqueiraImg from "@/assets/bituqueira-inox-fixa-cinzeiro.jpeg";
 import portaGuardaChuvaImg from "@/assets/porta-guarda-chuvas-em-uso.png";
 
 const solutions = [
@@ -22,7 +22,7 @@ const solutions = [
 
 export const Solutions = () => {
   const ref = useRef<HTMLElement>(null);
-  const whatsappLink = "https://wa.me/5511959105205?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20as%20soluções%20Winnet.";
+  const whatsappLink = "https://wa.me/5511978791851?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20as%20soluções%20Winnet.";
 
   useEffect(() => {
     const ctx = gsap.context(() => {

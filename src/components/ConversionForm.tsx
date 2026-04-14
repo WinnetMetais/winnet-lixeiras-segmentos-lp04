@@ -35,7 +35,7 @@ export const ConversionForm = () => {
     const text = encodeURIComponent(
       `Olá! Gostaria de solicitar um orçamento corporativo.\n\nNome: ${form.nome}\nEmpresa: ${form.empresa}\nSegmento: ${form.segmento}\nCidade: ${form.cidade}\nWhatsApp: ${form.whatsapp}\nNecessidade: ${form.necessidade}\nVolume estimado: ${form.volume}`
     );
-    window.open(`https://wa.me/5511959105205?text=${text}`, "_blank");
+    window.open(`https://wa.me/5511978791851?text=${text}`, "_blank");
   };
 
   const update = (field: string, value: string) => setForm((prev) => ({ ...prev, [field]: value }));

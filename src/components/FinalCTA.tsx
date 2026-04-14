@@ -5,7 +5,7 @@ import { MessageCircle, ArrowRight } from "lucide-react";
 
 export const FinalCTA = () => {
   const ref = useRef<HTMLElement>(null);
-  const whatsappLink = "https://wa.me/5511959105205?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista%20Winnet.";
+  const whatsappLink = "https://wa.me/5511978791851?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista%20Winnet.";
 
   useEffect(() => {
     const ctx = gsap.context(() => {

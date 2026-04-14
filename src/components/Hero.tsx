@@ -8,7 +8,7 @@ import heroBancada from "@/assets/hero-bancada.png";
 import heroExterior from "@/assets/hero-exterior.png";
 import heroCorporativo from "@/assets/hero-corporativo.png";
 
-const whatsappLink = "https://wa.me/5511959105205?text=Olá!%20Vim%20através%20do%20site%20e%20gostaria%20de%20mais%20informações.";
+const whatsappLink = "https://wa.me/5511978791851?text=Olá!%20Vim%20através%20do%20site%20e%20gostaria%20de%20mais%20informações.";
 
 gsap.registerPlugin(ScrollTrigger);
 
