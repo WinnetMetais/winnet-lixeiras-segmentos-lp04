@@ -9,7 +9,7 @@ import coletaSeletivaImg from "@/assets/lixeira-pedal-redonda-coleta-seletiva-gr
 import pedalAlcaResortImg from "@/assets/pedal-alca-grande-100l-resort.png";
 import coletaSeletivaInstImg from "@/assets/coleta-seletiva-instituicoes.png";
 import pedalAlcaRodizioHospitalImg from "@/assets/pedal-alca-rodizio-hospital.png";
-import lixeiraPedalImg from "@/assets/lixeira-pedal-e-alca-grande-porte-60l.png";
+import empresasEscritorioImg from "@/assets/lixeira-empresas-escritorio.png";
 import ensacadorImg from "@/assets/ensacador-guarda-chuvas-new.png";
 
 const segments = [
@@ -43,10 +43,10 @@ const segments = [
   },
   {
     id: "empresas", icon: Briefcase, label: "Empresas",
-    title: "Empresas & Escritórios", image: lixeiraPedalImg,
+    title: "Empresas & Escritórios", image: empresasEscritorioImg,
     description: "Imagem corporativa elevada com soluções discretas e funcionais. Padronização que reforça a identidade visual do ambiente de trabalho.",
     highlights: ["Recepções corporativas", "Copas e refeitórios", "Andares e corredores", "Áreas comuns"],
-    objectPosition: "center 20%",
+    objectPosition: "center center",
   },
   {
     id: "instituicoes", icon: Landmark, label: "Instituições",
