@@ -182,7 +182,7 @@ export const Hero = () => {
               {slide.title}
             </h1>
             <p
-              className="font-body font-bold text-accent max-w-[500px] leading-relaxed mb-3 sm:mb-6 text-xs sm:text-base lg:text-lg"
+              className="font-body font-bold text-black max-w-[500px] leading-relaxed mb-3 sm:mb-6 text-xs sm:text-base lg:text-lg drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)]"
             >
               {slide.subtitle}
             </p>
