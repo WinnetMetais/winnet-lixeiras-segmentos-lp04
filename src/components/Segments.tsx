@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import lixeiraAroImg from "@/assets/lixeira-aro-redonda-grande-porte-100l.png";
 import coletaSeletivaImg from "@/assets/lixeira-pedal-redonda-coleta-seletiva-grande-porte.png";
 import pedalAlcaResortImg from "@/assets/pedal-alca-grande-100l-resort.png";
+import coletaSeletivaInstImg from "@/assets/coleta-seletiva-instituicoes.png";
 import pedalAlcaRodizioHospitalImg from "@/assets/pedal-alca-rodizio-hospital.png";
 import lixeiraPedalImg from "@/assets/lixeira-pedal-e-alca-grande-porte-60l.png";
 import ensacadorImg from "@/assets/ensacador-guarda-chuvas-new.png";
@@ -49,7 +50,7 @@ const segments = [
   },
   {
     id: "instituicoes", icon: Landmark, label: "Instituições",
-    title: "Instituições & Espaços Públicos", image: coletaSeletivaImg,
+    title: "Instituições & Espaços Públicos", image: coletaSeletivaInstImg,
     description: "Organização e conformidade ambiental para ambientes de grande fluxo. Coleta seletiva com identificação por cores que facilita a separação correta dos resíduos.",
     highlights: ["Universidades", "Centros culturais", "Refeitórios", "Áreas de circulação"],
     objectPosition: "center 30%",
@@ -176,7 +177,7 @@ export const Segments = () => {
                 <Button
                   size="lg"
                   className="bg-accent hover:bg-accent/90 text-accent-foreground font-body font-semibold px-7 py-5 rounded-xl shadow-lg shadow-accent/20 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 group"
-                  onClick={() => window.open(`https://wa.me/5511959105205?text=Olá!%20Tenho%20interesse%20em%20soluções%20para%20${encodeURIComponent(current.label)}.`, "_blank")}
+                  onClick={() => window.open(`https://wa.me/5511978791851?text=Olá!%20Tenho%20interesse%20em%20soluções%20para%20${encodeURIComponent(current.label)}.`, "_blank")}
                 >
                   <MessageCircle className="w-5 h-5 mr-1" />
                   Solicitar Orçamento

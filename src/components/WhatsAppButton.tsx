@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 export const WhatsAppButton = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const whatsappLink = "https://wa.me/5511959105205?text=Olá!%20Vim%20através%20do%20site%20e%20gostaria%20de%20mais%20informações.";
+  const whatsappLink = "https://wa.me/5511978791851?text=Olá!%20Vim%20através%20do%20site%20e%20gostaria%20de%20mais%20informações.";
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 2000);

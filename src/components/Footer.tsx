@@ -2,7 +2,7 @@ import { MessageCircle, Mail, Phone, MapPin } from "lucide-react";
 import logoWinnet from "@/assets/logo-winnet.png";
 
 export const Footer = () => {
-  const whatsappLink = "https://wa.me/5511959105205";
+  const whatsappLink = "https://wa.me/5511978791851";
   const currentYear = new Date().getFullYear();
 
   return (
@@ -52,7 +52,7 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-primary-foreground">(11) 95910-5205</p>
+                  <p className="font-semibold text-primary-foreground">(11) 97879-1851</p>
                   <p className="text-xs">Seg a Sex, 9h às 17h</p>
                 </div>
               </li>

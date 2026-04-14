@@ -34,7 +34,7 @@ const products = [
 export const ProductGallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
-  const whatsappLink = "https://wa.me/5511959105205?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20Winnet.";
+  const whatsappLink = "https://wa.me/5511978791851?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20Winnet.";
 
   const filteredProducts = selectedCategory === "Todos" ? products : products.filter(p => p.category === selectedCategory);
 
