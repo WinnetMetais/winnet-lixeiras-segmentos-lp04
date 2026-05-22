@@ -2,7 +2,7 @@ import { MessageCircle, Mail, Phone, MapPin } from "lucide-react";
 import logoWinnet from "@/assets/logo-winnet.png";
 
 export const Footer = () => {
-  const whatsappLink = "https://wa.me/5511978791851";
+  const whatsappLink = "https://wa.me/5511978791851?text=Olá!%20Vim%20pelo%20site%20da%20Winnet%20e%20quero%20falar%20com%20um%20especialista.%20-%20LP01";
   const currentYear = new Date().getFullYear();
 
   return (

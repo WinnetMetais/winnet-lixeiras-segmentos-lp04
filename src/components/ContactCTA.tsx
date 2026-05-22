@@ -3,7 +3,7 @@ import { MessageCircle, Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 export const ContactCTA = () => {
-  const whatsappLink = "https://wa.me/5511978791851?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20empreendimento.";
+  const whatsappLink = "https://wa.me/5511978791851?text=Olá!%20Quero%20solicitar%20um%20orçamento%20personalizado%20em%20lixeiras%20de%20inox%20para%20o%20meu%20empreendimento.%20-%20LP01";
   const phoneNumber = "(11) 97879-1851";
   const email = "comercial@winnetmetais.com.br";
 

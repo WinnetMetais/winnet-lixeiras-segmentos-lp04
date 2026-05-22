@@ -71,7 +71,7 @@ export const Differentials = () => {
             variant="outline"
             size="lg"
             className="font-body font-semibold px-8 py-5 rounded-xl border-accent/30 text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 group"
-            onClick={() => window.open("https://wa.me/5511978791851?text=Olá!%20Gostaria%20de%20conhecer%20melhor%20os%20diferenciais%20da%20Winnet.", "_blank")}
+            onClick={() => window.open("https://wa.me/5511978791851?text=Olá!%20Quero%20entender%20como%20os%20diferenciais%20da%20Winnet%20podem%20elevar%20o%20padrão%20do%20meu%20empreendimento.%20-%20LP01", "_blank")}
           >
             <MessageCircle className="w-5 h-5 mr-1" />
             Converse com nossa equipe

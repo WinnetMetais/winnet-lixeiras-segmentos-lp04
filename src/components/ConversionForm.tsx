@@ -33,7 +33,7 @@ export const ConversionForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const text = encodeURIComponent(
-      `Olá! Gostaria de solicitar um orçamento corporativo.\n\nNome: ${form.nome}\nEmpresa: ${form.empresa}\nSegmento: ${form.segmento}\nCidade: ${form.cidade}\nWhatsApp: ${form.whatsapp}\nNecessidade: ${form.necessidade}\nVolume estimado: ${form.volume}`
+      `Olá! Quero solicitar um orçamento corporativo com a Winnet.\n\nNome: ${form.nome}\nEmpresa: ${form.empresa}\nSegmento: ${form.segmento}\nCidade: ${form.cidade}\nWhatsApp: ${form.whatsapp}\nNecessidade: ${form.necessidade}\nVolume estimado: ${form.volume}\n\n- LP01`
     );
     window.open(`https://wa.me/5511978791851?text=${text}`, "_blank");
   };

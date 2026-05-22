@@ -22,7 +22,7 @@ const solutions = [
 
 export const Solutions = () => {
   const ref = useRef<HTMLElement>(null);
-  const whatsappLink = "https://wa.me/5511978791851?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20as%20soluções%20Winnet.";
+  const whatsappLink = "https://wa.me/5511978791851?text=Olá!%20Quero%20conhecer%20as%20linhas%20de%20solução%20da%20Winnet%20e%20receber%20a%20recomendação%20ideal%20para%20o%20meu%20projeto.%20-%20LP01";
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -114,7 +114,7 @@ export const Solutions = () => {
               <Button
                 size="lg"
                 className="bg-accent hover:bg-accent/90 text-accent-foreground font-body font-semibold px-10 py-6 rounded-xl shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 transition-all duration-300 hover:-translate-y-0.5 group"
-                onClick={() => window.open("https://wa.me/5511978791851?text=Olá!%20Quero%20conhecer%20o%20catálogo%20completo%20com%20mais%20de%20300%20modelos!", "_blank")}
+                onClick={() => window.open("https://wa.me/5511978791851?text=Olá!%20Quero%20acessar%20o%20catálogo%20completo%20com%20mais%20de%20300%20modelos%20e%20falar%20com%20a%20Especialista%20Winnet.%20-%20LP01", "_blank")}
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Falar com Especialista

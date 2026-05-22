@@ -177,7 +177,7 @@ export const Segments = () => {
                 <Button
                   size="lg"
                   className="bg-accent hover:bg-accent/90 text-accent-foreground font-body font-semibold px-7 py-5 rounded-xl shadow-lg shadow-accent/20 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 group"
-                  onClick={() => window.open(`https://wa.me/5511978791851?text=Olá!%20Tenho%20interesse%20em%20soluções%20para%20${encodeURIComponent(current.label)}.`, "_blank")}
+                  onClick={() => window.open(`https://wa.me/5511978791851?text=Olá!%20Tenho%20um%20projeto%20no%20segmento%20de%20${encodeURIComponent(current.label)}%20e%20quero%20um%20orçamento%20sob%20medida%20da%20Winnet.%20-%20LP01`, "_blank")}
                 >
                   <MessageCircle className="w-5 h-5 mr-1" />
                   Solicitar Orçamento

@@ -93,7 +93,7 @@ export const ProcessSteps = () => {
           <Button
             size="lg"
             className="bg-accent hover:bg-accent/90 text-accent-foreground font-body font-semibold text-lg px-10 py-7 rounded-xl shadow-lg shadow-accent/20 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 group"
-            onClick={() => window.open("https://wa.me/5511978791851?text=Olá!%20Gostaria%20de%20iniciar%20meu%20orçamento%20com%20a%20Winnet.", "_blank")}
+            onClick={() => window.open("https://wa.me/5511978791851?text=Olá!%20Quero%20iniciar%20agora%20o%20meu%20orçamento%20com%20a%20Winnet%20e%20receber%20o%20atendimento%20do%20especialista.%20-%20LP01", "_blank")}
           >
             <MessageCircle className="w-5 h-5 mr-1" />
             Iniciar meu Orçamento

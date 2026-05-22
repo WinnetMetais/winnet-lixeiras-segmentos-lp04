@@ -8,7 +8,7 @@ import heroBancada from "@/assets/hero-bancada.png";
 import heroExterior from "@/assets/hero-exterior.png";
 import heroCorporativo from "@/assets/hero-corporativo.png";
 
-const whatsappLink = "https://wa.me/5511978791851?text=Olá!%20Vim%20através%20do%20site%20e%20gostaria%20de%20mais%20informações.";
+const whatsappLink = "https://wa.me/5511978791851?text=Olá!%20Cheguei%20pelo%20site%20da%20Winnet%20e%20quero%20conhecer%20as%20soluções%20em%20inox%20para%20o%20meu%20empreendimento.%20-%20LP01";
 
 gsap.registerPlugin(ScrollTrigger);
 
