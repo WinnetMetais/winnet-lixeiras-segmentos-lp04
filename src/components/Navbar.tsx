@@ -15,7 +15,7 @@ export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const whatsappLink =
-    "https://wa.me/5511978791851?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20orçamento.";
+    "https://wa.me/5511978791851?text=Olá!%20Vim%20pelo%20site%20da%20Winnet%20e%20quero%20solicitar%20um%20orçamento%20personalizado.%20-%20LP01";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
